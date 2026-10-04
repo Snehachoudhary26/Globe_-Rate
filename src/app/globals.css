@@ -30,7 +30,7 @@
   --color-pale-peach: #FFE0C4;
   --color-soft-ivory: #FFFAEB;
 
-  /* SHADCN UI SYSTEM COLORS (Adapted for pastel theme) */
+  /* SHADCN UI SYSTEM COLORS */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   
@@ -65,9 +65,9 @@
 }
 
 :root {
-  /* Light mode - Using your Soft Ivory as background */
-  --background: 45 100% 96%; /* #FFFAEB */
-  --foreground: 240 10% 20%; /* Soft Black */
+  /* Light mode - Soft Ivory background */
+  --background: 45 100% 96%;
+  --foreground: 240 10% 20%;
   
   --card: 0 0% 100%;
   --card-foreground: 240 10% 20%;
@@ -76,27 +76,29 @@
   --popover-foreground: 240 10% 20%;
   
   /* Primary buttons use Sea Green */
-  --primary: 157 44% 61%; /* #70C5A4 */
+  --primary: 157 44% 61%;
   --primary-foreground: 0 0% 100%;
   
   /* Secondary uses Lavender */
-  --secondary: 240 100% 96%; /* #EBEBFF */
+  --secondary: 240 100% 96%;
   --secondary-foreground: 240 10% 20%;
   
   --muted: 240 20% 95%;
   --muted-foreground: 240 5% 45%;
   
-  --accent: 271 100% 83%; /* #D3A9FF */
+  /* Accent uses Purple Magenta */
+  --accent: 271 100% 83%;
   --accent-foreground: 240 10% 20%;
   
-  --destructive: 345 74% 73%; /* #EB88AB */
+  /* Destructive uses Rose Pink */
+  --destructive: 345 74% 73%;
   --destructive-foreground: 0 0% 100%;
   
   --border: 240 20% 90%;
   --input: 240 20% 90%;
   --ring: 157 44% 61%;
   
-  --radius: 1rem; /* Rounded friendly corners */
+  --radius: 1rem;
 }
 
 .dark {
@@ -139,7 +141,7 @@
   }
 }
 
-/* Custom utility for the marble mesh background you liked */
+/* Custom utility for the marble mesh background */
 .bg-marble-mesh {
   background-color: #FFFAEB;
   background-image: 
