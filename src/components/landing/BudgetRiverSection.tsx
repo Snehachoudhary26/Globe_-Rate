@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Droplets, Wallet, PlaneTicket, ShoppingBag } from "lucide-react";
+import { Droplets, Wallet, Plane, ShoppingBag } from "lucide-react";
 
 export default function BudgetRiverSection() {
   return (
@@ -32,7 +32,7 @@ export default function BudgetRiverSection() {
 
         <div className="flex gap-4">
           <div className="bg-white/60 border border-white backdrop-blur-md rounded-xl p-4 flex-1 shadow-sm text-center">
-            <PlaneTicket className="mx-auto text-light-teal mb-2" size={24} />
+            <Plane className="mx-auto text-light-teal mb-2" size={24} />
             <div className="font-bold text-slate-800 text-xl">¥45,000</div>
             <div className="text-xs font-medium text-slate-500 uppercase tracking-wider">Transport</div>
           </div>

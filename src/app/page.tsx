@@ -47,9 +47,7 @@ export default function Home() {
           <Link href="#how-it-works" className="hover:text-sea-green transition-colors">How it Works</Link>
           <Link href="#destinations" className="hover:text-sea-green transition-colors">Destinations</Link>
         </div>
-        <Link href="/dashboard" className="px-5 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:scale-105 transition-transform">
-          Open App
-        </button>
+        <Link href="/dashboard" className="px-5 py-2 rounded-full bg-slate-900 text-white text-sm font-medium hover:scale-105 transition-transform">Open App</Link>
       </nav>
 
       {/* HERO SECTION */}
