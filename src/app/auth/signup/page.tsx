@@ -7,14 +7,13 @@ export default function SignupPage() {
   return (
     <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
       
-      {/* FULL SCREEN BACKGROUND IMAGE */}
+      {/* 100% CRYSTAL CLEAR BACKGROUND IMAGE (NO BLUR OVERLAYS) */}
       <div className="absolute inset-0 z-0">
-        <Image src="/images/hero.jpg" alt="Travel Background" fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[6px]"></div>
+        <Image src="/images/login-image.png" alt="Travel Background" fill className="object-cover" priority />
       </div>
 
-      {/* ABSOLUTE CENTER FLOATING GLASS CARD */}
-      <div className="relative z-10 w-full max-w-lg p-10 md:p-12 bg-white/85 backdrop-blur-3xl border border-white rounded-[2.5rem] shadow-[0_0_80px_rgba(0,0,0,0.5)] mx-4 transform transition-all hover:scale-[1.01]">
+      {/* CENTERED FLOATING CARD */}
+      <div className="relative z-10 w-full max-w-lg p-10 md:p-12 bg-white/95 backdrop-blur-md border border-white rounded-[2.5rem] shadow-[0_20px_80px_rgba(0,0,0,0.15)] mx-4 transform transition-all hover:scale-[1.01]">
         
         <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-sea-green transition-colors mb-6">
           <ArrowLeft size={16} /> Back to Home
@@ -31,17 +30,17 @@ export default function SignupPage() {
         <form className="space-y-4">
           <div>
             <label className="block text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
-            <input type="text" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white/50 focus:bg-white focus:outline-none focus:border-sea-green focus:ring-4 focus:ring-sea-green/20 shadow-inner transition-all text-slate-900 font-medium" placeholder="Aditi Sharma" />
+            <input type="text" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-sea-green focus:ring-4 focus:ring-sea-green/20 shadow-sm transition-all text-slate-900 font-medium" placeholder="Aditi Sharma" />
           </div>
           <div>
             <label className="block text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Email</label>
-            <input type="email" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white/50 focus:bg-white focus:outline-none focus:border-sea-green focus:ring-4 focus:ring-sea-green/20 shadow-inner transition-all text-slate-900 font-medium" placeholder="you@example.com" />
+            <input type="email" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-sea-green focus:ring-4 focus:ring-sea-green/20 shadow-sm transition-all text-slate-900 font-medium" placeholder="you@example.com" />
           </div>
           <div>
             <label className="block text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Password</label>
-            <input type="password" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white/50 focus:bg-white focus:outline-none focus:border-sea-green focus:ring-4 focus:ring-sea-green/20 shadow-inner transition-all text-slate-900 font-medium" placeholder="••••••••" />
+            <input type="password" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-sea-green focus:ring-4 focus:ring-sea-green/20 shadow-sm transition-all text-slate-900 font-medium" placeholder="••••••••" />
           </div>
-          <button className="w-full py-4 mt-6 rounded-xl bg-gradient-to-r from-sea-green to-emerald-500 text-white font-black hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(112,197,164,0.8)] transition-all shadow-xl text-lg">
+          <button className="w-full py-4 mt-6 rounded-xl bg-gradient-to-r from-sea-green to-emerald-500 text-white font-black hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(112,197,164,0.6)] transition-all shadow-lg text-lg">
             Get Started
           </button>
         </form>
