@@ -1,15 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Globe2, ShieldCheck, Sparkles, ChevronDown } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import SnapAskSection from "@/components/landing/SnapAskSection";
 import ScamDetectorSection from "@/components/landing/ScamDetectorSection";
 import PriceAnchorSection from "@/components/landing/PriceAnchorSection";
 import BudgetRiverSection from "@/components/landing/BudgetRiverSection";
-import MegaFeatureSection from "@/components/landing/MegaFeatureSection"; from "@/components/landing/BudgetRiverSection";
-import MegaFeatureSection from "@/components/landing/MegaFeatureSection"; from "@/components/landing/BudgetRiverSection";
+import MegaFeatureSection from "@/components/landing/MegaFeatureSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import Footer from "@/components/landing/Footer";
 
@@ -33,8 +32,8 @@ export default function Home() {
       {/* ULTRA-PREMIUM NAVBAR */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/20 backdrop-blur-2xl border-b border-white/50 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg border border-white">
-            <Image src="/images/logo.jpg" alt="GlobeRate Logo" fill className="object-contain" />
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-white bg-white">
+            <Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-contain p-1" />
           </div>
           <span className="text-2xl font-black tracking-tight text-slate-800">GlobeRate</span>
         </div>
@@ -51,12 +50,12 @@ export default function Home() {
         {/* Right Actions (Language, Sign In, CTA) */}
         <div className="flex items-center gap-4">
           <button className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-600 bg-white/40 px-3 py-1.5 rounded-full hover:bg-white/70 transition-all border border-white/50">
-            <Globe2 size={16} /> EN <ChevronDown size={14} />
+             EN <ChevronDown size={14} />
           </button>
           <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-700 hover:text-purple-magenta transition-colors">
             Sign In
           </Link>
-          <Link href="/dashboard" className="px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] transition-all">
+          <Link href="/auth/signup" className="px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] transition-all">
             Get Started
           </Link>
         </div>
@@ -83,7 +82,7 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-            <Link href="/dashboard" className="w-full sm:w-auto px-8 py-4 rounded-full bg-sea-green text-white font-bold text-lg flex items-center justify-center gap-2 hover:bg-light-teal hover:shadow-xl hover:shadow-sea-green/30 transition-all active:scale-95">
+            <Link href="/auth/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-sea-green text-white font-bold text-lg flex items-center justify-center gap-2 hover:bg-light-teal hover:shadow-xl hover:shadow-sea-green/30 transition-all active:scale-95">
               Start Your Trip <ArrowRight size={20} />
             </Link>
           </motion.div>
@@ -126,7 +125,6 @@ export default function Home() {
       <ScamDetectorSection />
       <PriceAnchorSection />
       <BudgetRiverSection />
-      <MegaFeatureSection />
       <MegaFeatureSection />
       <TestimonialsSection />
       <Footer />

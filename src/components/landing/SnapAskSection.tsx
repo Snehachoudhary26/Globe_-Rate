@@ -23,33 +23,33 @@ export default function SnapAskSection() {
           className="object-cover hover:scale-105 transition-transform duration-700"
         />
         
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-magenta/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-magenta/30 to-transparent"></div>
         
-        {/* Floating AI Reticle/Analysis Widget */}
+        {/* Perfectly Sized Phone Scanner */}
         <motion.div 
-          animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-          className="absolute inset-0 m-auto w-[75px] h-[150px] ml-[-20px] mt-[10px] border-2 border-dashed border-white/80 rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm"
+          animate={{ opacity: [0.7, 1, 0.7] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute top-[26%] left-[45%] w-[65px] h-[130px] border border-dashed border-white/80 rounded-xl flex items-center justify-center bg-white/10 backdrop-blur-[2px] overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.2)]"
         >
           <motion.div 
-            initial={{ y: -40 }}
-            animate={{ y: 40 }}
-            transition={{ repeat: Infinity, duration: 2, ease: "linear", repeatType: "reverse" }}
-            className="w-full h-1 bg-gradient-to-r from-transparent via-purple-magenta to-transparent shadow-[0_0_10px_#D3A9FF]"
+            initial={{ y: -65 }}
+            animate={{ y: 65 }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "linear", repeatType: "reverse" }}
+            className="w-full h-[2px] bg-purple-magenta shadow-[0_0_8px_#D3A9FF]"
           />
         </motion.div>
 
-        {/* AI Result Card */}
+        {/* Sleek AI Result Card */}
         <motion.div 
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl flex items-center gap-4"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[85%] bg-white/95 backdrop-blur-xl p-3 rounded-2xl shadow-xl flex items-center gap-3 border border-white"
         >
-          <div className="bg-purple-magenta text-white p-2 rounded-xl"><Sparkles size={24} /></div>
+          <div className="bg-purple-magenta text-white p-2 rounded-xl"><Sparkles size={16} /></div>
           <div>
-            <p className="text-xs font-bold text-purple-magenta uppercase tracking-wider">Nova AI Result</p>
+            <p className="text-[10px] font-bold text-purple-magenta uppercase tracking-wider">Nova AI Result</p>
             <p className="text-sm font-black text-slate-800">Menu items converted to ₹ INR</p>
           </div>
         </motion.div>
@@ -63,7 +63,7 @@ export default function SnapAskSection() {
         transition={{ duration: 0.8, type: "spring" }}
         className="flex-1"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pale-purple text-purple-magenta text-sm font-bold mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 text-sm font-bold mb-6 shadow-sm border border-purple-200">
           <Sparkles size={16} /> Nova AI Vision
         </div>
         <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
@@ -89,7 +89,7 @@ export default function SnapAskSection() {
               transition={{ delay: 0.2 + (i * 0.1) }}
               className="flex items-center gap-4 text-slate-800 font-bold"
             >
-              <div className="w-8 h-8 rounded-full bg-light-violet flex items-center justify-center text-white shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 shadow-sm">
                 <ScanText size={14} />
               </div>
               {item}
