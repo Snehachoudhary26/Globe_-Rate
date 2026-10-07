@@ -63,7 +63,7 @@ export default function ScamDetectorSection() {
         <motion.div 
           animate={{ y: [-5, 5, -5] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl p-5 border-l-8 border-coral-pink"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[80%] max-w-[320px] bg-white/95 backdrop-blur-xl rounded-xl shadow-xl p-4 border-l-4 border-coral-pink"
         >
           <div className="flex justify-between items-center mb-4">
             <span className="font-black text-slate-800 flex items-center gap-2 text-lg">
@@ -73,7 +73,7 @@ export default function ScamDetectorSection() {
           
           <div className="bg-rose-pink/10 rounded-xl p-4 flex justify-between items-center">
             <span className="text-sm font-bold text-coral-pink">Hidden Markup</span>
-            <span className="text-2xl font-black text-coral-pink">6.7% (₹6,700)</span>
+            <span className="text-lg font-black text-coral-pink">6.7% (₹6,700)</span>
           </div>
         </motion.div>
       </motion.div>

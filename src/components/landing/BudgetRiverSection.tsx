@@ -69,13 +69,13 @@ export default function BudgetRiverSection() {
         <motion.div 
           animate={{ y: [-8, 8, -8] }}
           transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-          className="absolute top-6 right-6 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl flex flex-col items-end border border-white"
+          className="absolute top-4 right-4 bg-white/90 backdrop-blur-xl p-2.5 rounded-xl shadow-xl flex flex-col items-end border border-white"
         >
           <div className="flex items-center gap-2 mb-1">
             <div className="w-2 h-2 rounded-full bg-sea-green animate-pulse"></div>
             <span className="text-xs font-bold text-slate-500 uppercase">Live Sync</span>
           </div>
-          <span className="text-lg font-black text-slate-800">Euro Trip Synced</span>
+          <span className="text-sm font-black text-slate-800">Euro Trip Synced</span>
         </motion.div>
       </motion.div>
 

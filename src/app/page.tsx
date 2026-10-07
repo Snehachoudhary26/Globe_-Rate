@@ -8,6 +8,8 @@ import SnapAskSection from "@/components/landing/SnapAskSection";
 import ScamDetectorSection from "@/components/landing/ScamDetectorSection";
 import PriceAnchorSection from "@/components/landing/PriceAnchorSection";
 import BudgetRiverSection from "@/components/landing/BudgetRiverSection";
+import MegaFeatureSection from "@/components/landing/MegaFeatureSection"; from "@/components/landing/BudgetRiverSection";
+import MegaFeatureSection from "@/components/landing/MegaFeatureSection"; from "@/components/landing/BudgetRiverSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import Footer from "@/components/landing/Footer";
 
@@ -124,6 +126,8 @@ export default function Home() {
       <ScamDetectorSection />
       <PriceAnchorSection />
       <BudgetRiverSection />
+      <MegaFeatureSection />
+      <MegaFeatureSection />
       <TestimonialsSection />
       <Footer />
     </main>

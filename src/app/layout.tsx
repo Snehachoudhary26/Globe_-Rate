@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/animations/CustomCursor";
+import FloatingParticles from "@/components/animations/FloatingParticles";
+import SplashScreen from "@/components/animations/SplashScreen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GlobeRate | Travel Money Intelligence",
-  description: "Protect your money, avoid scams, and track travel budgets globally.",
+  title: "GlobeRate - Travel Smarter",
+  description: "The intelligent travel finance platform",
 };
 
 export default function RootLayout({
@@ -25,10 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* We add selection:bg-purple-magenta so highlighting text looks premium and matches our theme */}
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-purple-magenta selection:text-white min-h-screen flex flex-col`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <SplashScreen />
+        <CustomCursor />
+        <FloatingParticles />
         <SmoothScroll>
           {children}
         </SmoothScroll>

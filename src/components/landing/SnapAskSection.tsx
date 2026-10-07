@@ -29,7 +29,7 @@ export default function SnapAskSection() {
         <motion.div 
           animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
           transition={{ repeat: Infinity, duration: 3 }}
-          className="absolute inset-0 m-auto w-48 h-32 border-2 border-dashed border-white/80 rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm"
+          className="absolute inset-0 m-auto w-[75px] h-[150px] ml-[-20px] mt-[10px] border-2 border-dashed border-white/80 rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm"
         >
           <motion.div 
             initial={{ y: -40 }}
