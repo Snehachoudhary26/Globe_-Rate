@@ -23,7 +23,7 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative overflow-hidden bg-soft-ivory">
+    <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#FFF9F0] via-[#F4EFFF] to-[#E6F9F5]">
       
       {/* Dynamic Marble Mesh Background for Hero only */}
       <div className="absolute top-0 left-0 w-full h-[120vh] bg-marble-mesh -z-10"></div>
@@ -32,7 +32,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/20 backdrop-blur-2xl border-b border-white/50 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg border border-white">
-            <Image src="/images/logo.jpg" alt="GlobeRate Logo" fill className="object-cover" />
+            <Image src="/images/logo.jpg" alt="GlobeRate Logo" fill className="object-contain" />
           </div>
           <span className="text-2xl font-black tracking-tight text-slate-800">GlobeRate</span>
         </div>

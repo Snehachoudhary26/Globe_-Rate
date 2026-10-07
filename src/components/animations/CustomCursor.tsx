@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -12,7 +11,6 @@ export default function CustomCursor() {
       setMousePosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
     };
-    
     window.addEventListener("mousemove", updateMousePosition);
     return () => window.removeEventListener("mousemove", updateMousePosition);
   }, [isVisible]);
@@ -20,12 +18,19 @@ export default function CustomCursor() {
   if (!isVisible) return null;
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center border-2 border-white/50 bg-white/10 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-      animate={{ x: mousePosition.x - 20, y: mousePosition.y - 20 }}
-      transition={{ type: "spring", stiffness: 400, damping: 28, mass: 0.5 }}
-    >
-      <div className="w-2 h-2 bg-white rounded-full shadow-[0_0_10px_#fff]" />
-    </motion.div>
+    <>
+      {/* Outer Trailing Circle */}
+      <motion.div
+        className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[100000] border-2 border-sea-green bg-sea-green/10 backdrop-blur-sm"
+        animate={{ x: mousePosition.x - 20, y: mousePosition.y - 20 }}
+        transition={{ type: "spring", stiffness: 600, damping: 40, mass: 0.1 }}
+      />
+      {/* Inner Glowing Dot */}
+      <motion.div
+        className="fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-[100000] bg-purple-magenta shadow-[0_0_15px_#D3A9FF]"
+        animate={{ x: mousePosition.x - 6, y: mousePosition.y - 6 }}
+        transition={{ type: "spring", stiffness: 1500, damping: 20, mass: 0.05 }}
+      />
+    </>
   );
 }
