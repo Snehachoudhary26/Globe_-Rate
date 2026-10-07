@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Sparkles, ScanText } from "lucide-react";
 import Image from "next/image";
@@ -7,96 +6,25 @@ import Image from "next/image";
 export default function SnapAskSection() {
   return (
     <section id="nova-ai" className="py-32 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-      
-      {/* Left Visual: Real Image with Floating UI */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, type: "spring" }}
-        className="flex-1 relative w-full aspect-[4/3] rounded-[2.5rem] shadow-2xl flex items-center justify-center overflow-hidden border-4 border-white"
-      >
-        <Image 
-          src="/images/nova_ai.jpg" 
-          alt="Nova AI scanning cafe menu" 
-          fill 
-          className="object-cover hover:scale-105 transition-transform duration-700"
-        />
+      <motion.div className="flex-1 relative w-full aspect-[4/3] rounded-[2.5rem] shadow-2xl flex items-center justify-center overflow-hidden border-4 border-white">
+        <Image src="/images/nova_ai.jpg" alt="Nova AI scanning cafe menu" fill className="object-cover hover:scale-105 transition-transform duration-700" />
         
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-magenta/30 to-transparent"></div>
+        {/* Removed the buggy scanner overlay. Let the beautiful image speak for itself! */}
         
-        {/* Perfectly Sized Phone Scanner */}
-        <motion.div 
-          animate={{ opacity: [0.7, 1, 0.7] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute top-[26%] left-[45%] w-[65px] h-[130px] border border-dashed border-white/80 rounded-xl flex items-center justify-center bg-white/10 backdrop-blur-[2px] overflow-hidden shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-        >
-          <motion.div 
-            initial={{ y: -65 }}
-            animate={{ y: 65 }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "linear", repeatType: "reverse" }}
-            className="w-full h-[2px] bg-purple-magenta shadow-[0_0_8px_#D3A9FF]"
-          />
-        </motion.div>
-
-        {/* Sleek AI Result Card */}
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[85%] bg-white/95 backdrop-blur-xl p-3 rounded-2xl shadow-xl flex items-center gap-3 border border-white"
-        >
+        {/* Small sleek AI Result Card */}
+        <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-xl px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-purple-100">
           <div className="bg-purple-magenta text-white p-2 rounded-xl"><Sparkles size={16} /></div>
-          <div>
-            <p className="text-[10px] font-bold text-purple-magenta uppercase tracking-wider">Nova AI Result</p>
-            <p className="text-sm font-black text-slate-800">Menu items converted to ₹ INR</p>
-          </div>
+          <div><p className="text-[10px] font-black text-purple-magenta uppercase tracking-widest">Nova AI Result</p><p className="text-sm font-black text-slate-900">Menu converted to ₹ INR</p></div>
         </motion.div>
       </motion.div>
 
-      {/* Right Content */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, type: "spring" }}
-        className="flex-1"
-      >
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 text-sm font-bold mb-6 shadow-sm border border-purple-200">
+      <div className="flex-1">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-bold mb-6 border border-purple-200">
           <Sparkles size={16} /> Nova AI Vision
         </div>
-        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-          Point your camera. <br />
-          <span className="text-purple-magenta">Know the truth.</span>
-        </h2>
-        <p className="text-lg text-slate-700 mb-8 leading-relaxed font-medium">
-          Don't know if that restaurant menu is a rip-off? Not sure about the hidden fees on an ATM screen? Just snap a photo. 
-          <strong className="text-slate-900 block mt-2 text-xl">Meet Nova AI.</strong>
-        </p>
-        
-        <ul className="space-y-5">
-          {[
-            "Instantly translates & converts physical menus",
-            "Reads complex airport exchange boards",
-            "Detects hidden withdrawal fees visually"
-          ].map((item, i) => (
-            <motion.li 
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 + (i * 0.1) }}
-              className="flex items-center gap-4 text-slate-800 font-bold"
-            >
-              <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 shadow-sm">
-                <ScanText size={14} />
-              </div>
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
+        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">Point your camera. <br /><span className="text-purple-magenta">Know the truth.</span></h2>
+        <p className="text-lg text-slate-700 mb-8 font-medium">Just snap a photo. <strong className="text-slate-900 font-black block mt-2 text-xl">Meet Nova AI.</strong></p>
+      </div>
     </section>
   );
 }

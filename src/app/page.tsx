@@ -33,7 +33,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/20 backdrop-blur-2xl border-b border-white/50 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-white bg-white">
-            <Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-contain p-1" />
+            <Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-cover scale-100" />
           </div>
           <span className="text-2xl font-black tracking-tight text-slate-800">GlobeRate</span>
         </div>
