@@ -40,11 +40,11 @@ export default function Home() {
         
         {/* Center Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
-          <Link href="#features" className="hover:text-purple-magenta transition-colors">Features</Link>
-          <Link href="#nova-ai" className="hover:text-purple-magenta transition-colors flex items-center gap-1">
+          <Link href="/features" className="hover:text-purple-magenta transition-colors">Features</Link>
+          <Link href="/nova-ai" className="hover:text-purple-magenta transition-colors flex items-center gap-1">
             Nova AI <Sparkles size={14} className="text-amber-500" />
           </Link>
-          <Link href="#destinations" className="hover:text-purple-magenta transition-colors">Destinations</Link>
+          <Link href="/destinations" className="hover:text-purple-magenta transition-colors">Destinations</Link>
         </div>
 
         {/* Right Actions (Language, Sign In, CTA) */}
