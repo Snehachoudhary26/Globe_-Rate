@@ -1,24 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScroll from "@/components/animations/SmoothScroll";
 import CustomCursor from "@/components/animations/CustomCursor";
 import FloatingParticles from "@/components/animations/FloatingParticles";
 import SplashScreen from "@/components/animations/SplashScreen";
+import NovaAssistant from "@/components/chat/NovaAssistant";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GlobeRate - Travel Smarter",
-  description: "The intelligent travel finance platform",
+  title: "GlobeRate | Smart Travel Finance",
+  description: "Detect ATM scams and track your global budget.",
 };
 
 export default function RootLayout({
@@ -28,13 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={inter.className}>
         <SplashScreen />
         <CustomCursor />
         <FloatingParticles />
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        
+        {/* Our new AI Chatbot sitting globally on top of the site! */}
+        <NovaAssistant />
       </body>
     </html>
   );
