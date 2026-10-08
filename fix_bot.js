@@ -1,4 +1,5 @@
-"use client";
+const fs = require('fs');
+const code = `"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bot, X } from "lucide-react";
@@ -96,7 +97,7 @@ export default function NovaAssistant() {
              
              <div className="flex-1 p-5 overflow-y-auto flex flex-col gap-4 bg-slate-50">
                {messages.map((m, i) => (
-                 <div key={i} className={`max-w-[85%] p-4 rounded-2xl shadow-sm ${m.role === 'ai' ? 'bg-white border border-slate-100 rounded-tl-sm self-start text-slate-800' : 'bg-gradient-to-br from-purple-magenta to-rose-500 text-white rounded-tr-sm self-end'}`}>
+                 <div key={i} className={\`max-w-[85%] p-4 rounded-2xl shadow-sm \${m.role === 'ai' ? 'bg-white border border-slate-100 rounded-tl-sm self-start text-slate-800' : 'bg-gradient-to-br from-purple-magenta to-rose-500 text-white rounded-tr-sm self-end'}\`}>
                    <p className="text-sm font-medium leading-relaxed">{m.text}</p>
                  </div>
                ))}
@@ -133,4 +134,5 @@ export default function NovaAssistant() {
       </button>
     </div>
   );
-}
+}`;
+fs.writeFileSync('src/components/chat/NovaAssistant.tsx', code);
