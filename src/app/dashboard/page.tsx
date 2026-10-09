@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Wallet, ArrowRight, ShieldAlert, TrendingDown, Plane } from "lucide-react";
 
 export default function DashboardPage() {
