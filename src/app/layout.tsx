@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import SmoothScroll from "@/components/animations/SmoothScroll";
 import CustomCursor from "@/components/animations/CustomCursor";
 import FloatingParticles from "@/components/animations/FloatingParticles";
@@ -14,23 +15,19 @@ export const metadata: Metadata = {
   description: "Detect ATM scams and track your global budget.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SplashScreen />
-        <CustomCursor />
-        <FloatingParticles />
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
-        
-        {/* Our new AI Chatbot sitting globally on top of the site! */}
-        <NovaAssistant />
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className + " bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300"}>
+        <ThemeProvider>
+          <SplashScreen />
+          <CustomCursor />
+          <FloatingParticles />
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+          <NovaAssistant />
+        </ThemeProvider>
       </body>
     </html>
   );
