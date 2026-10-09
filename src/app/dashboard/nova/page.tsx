@@ -18,12 +18,12 @@ export default function NovaLensPage() {
     <div className="max-w-6xl mx-auto pb-10">
       <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-4xl font-black text-slate-900 flex items-center gap-3 tracking-tight mb-2">
+          <h1 className="text-4xl font-black text-white flex items-center gap-3 tracking-tight mb-2">
             <Sparkles className="text-purple-magenta" size={32} /> Nova AI Lens
           </h1>
-          <p className="text-slate-500 font-bold text-lg">Point your camera at any foreign menu or ATM screen.</p>
+          <p className="text-slate-300 font-bold text-lg">Point your camera at any foreign menu or ATM screen.</p>
         </div>
-        <div className="inline-flex items-center gap-2 px-5 py-3 bg-white text-purple-700 font-black rounded-xl text-sm shadow-md border-2 border-white w-fit">
+        <div className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-xl border border-white/10 text-purple-700 font-black rounded-xl text-sm shadow-md border-2 border-white w-fit">
           <span className="flex h-3 w-3 rounded-full bg-purple-magenta animate-pulse"></span>
           Live Translation Active
         </div>
@@ -47,24 +47,24 @@ export default function NovaLensPage() {
         <AnimatePresence>
           {scanComplete && (
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="absolute inset-0 z-20 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-6">
-              <div className="w-full max-w-md bg-white/95 backdrop-blur-2xl rounded-[2rem] p-8 shadow-2xl border-2 border-white">
+              <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/10/95 backdrop-blur-2xl rounded-[2rem] p-8 shadow-2xl border-2 border-white">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 text-white flex items-center justify-center shadow-xl shadow-emerald-500/30">
                     <Languages size={28} />
                   </div>
                   <div>
-                    <h3 className="font-black text-2xl text-slate-900">Menu Translated</h3>
-                    <p className="text-sm font-bold text-slate-500">French (€) → English ($ USD)</p>
+                    <h3 className="font-black text-2xl text-white">Menu Translated</h3>
+                    <p className="text-sm font-bold text-slate-300">French (€) → English ($ USD)</p>
                   </div>
                 </div>
                 
                 <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-center p-5 bg-white rounded-2xl border-2 border-slate-100 shadow-sm">
-                    <span className="font-black text-slate-800 text-xl">Café au Lait</span>
+                  <div className="flex justify-between items-center p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl border-2 border-white/10 shadow-sm">
+                    <span className="font-black text-white text-xl">Café au Lait</span>
                     <span className="font-black text-emerald-600 text-xl">$4.50 <span className="text-sm text-slate-400 line-through ml-1">€4.20</span></span>
                   </div>
-                  <div className="flex justify-between items-center p-5 bg-white rounded-2xl border-2 border-slate-100 shadow-sm">
-                    <span className="font-black text-slate-800 text-xl">Croissant</span>
+                  <div className="flex justify-between items-center p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl border-2 border-white/10 shadow-sm">
+                    <span className="font-black text-white text-xl">Croissant</span>
                     <span className="font-black text-emerald-600 text-xl">$2.80 <span className="text-sm text-slate-400 line-through ml-1">€2.60</span></span>
                   </div>
                 </div>
