@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Scan, Sparkles, Languages, ArrowRight, ShieldAlert } from "lucide-react";
+import { Scan, Languages } from "lucide-react";
 import Image from "next/image";
 
 export default function NovaLensPage() {
@@ -15,72 +14,67 @@ export default function NovaLensPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto pb-10">
-      <div className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="max-w-5xl mx-auto space-y-8">
+      <div className="flex justify-between items-end mb-2">
         <div>
-          <h1 className="text-4xl font-black text-white flex items-center gap-3 tracking-tight mb-2">
-            <Sparkles className="text-purple-magenta" size={32} /> Nova AI Lens
-          </h1>
-          <p className="text-slate-300 font-bold text-lg">Point your camera at any foreign menu or ATM screen.</p>
+          <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Nova AI Lens</h1>
+          <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">Point your camera at any foreign menu or ATM screen.</p>
         </div>
-        <div className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 backdrop-blur-xl border border-white/10 text-purple-700 font-black rounded-xl text-sm shadow-md border-2 border-white w-fit">
-          <span className="flex h-3 w-3 rounded-full bg-purple-magenta animate-pulse"></span>
+        <div className="px-4 py-2 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 font-bold rounded-lg text-sm border border-indigo-100 dark:border-indigo-500/20 flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-pulse"></span>
           Live Translation Active
         </div>
       </div>
 
-      <div className="relative w-full aspect-[4/3] md:aspect-[21/9] bg-slate-900 rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.25)] border-8 border-white">
-        {/* BRAND NEW PHOTOGRAPH! */}
+      <div className="relative w-full aspect-[21/9] bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-800">
         <Image src="/images/nova_scanner_menu.jpg" alt="Camera Feed" fill className="object-cover opacity-90" />
 
         {isScanning && (
-          <motion.div animate={{ y: ["-100%", "100%"] }} transition={{ repeat: Infinity, duration: 2, ease: "linear" }} className="absolute inset-0 border-b-4 border-purple-magenta bg-gradient-to-b from-transparent to-purple-magenta/40 z-10 shadow-[0_10px_50px_rgba(211,169,255,0.8)]" />
+          <div className="absolute inset-0 border-b-2 border-indigo-500 bg-gradient-to-b from-transparent to-indigo-500/40 z-10 animate-[scan_2s_linear_infinite]" />
         )}
 
-        <div className="absolute inset-8 md:inset-12 z-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-20 h-20 border-t-8 border-l-8 border-white/80 rounded-tl-[2rem]"></div>
-          <div className="absolute top-0 right-0 w-20 h-20 border-t-8 border-r-8 border-white/80 rounded-tr-[2rem]"></div>
-          <div className="absolute bottom-0 left-0 w-20 h-20 border-b-8 border-l-8 border-white/80 rounded-bl-[2rem]"></div>
-          <div className="absolute bottom-0 right-0 w-20 h-20 border-b-8 border-r-8 border-white/80 rounded-br-[2rem]"></div>
+        <div className="absolute inset-12 z-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-12 h-12 border-t-4 border-l-4 border-white/80 rounded-tl-xl"></div>
+          <div className="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-white/80 rounded-tr-xl"></div>
+          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-4 border-l-4 border-white/80 rounded-bl-xl"></div>
+          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-4 border-r-4 border-white/80 rounded-br-xl"></div>
         </div>
 
-        <AnimatePresence>
-          {scanComplete && (
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} className="absolute inset-0 z-20 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-6">
-              <div className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/10/95 backdrop-blur-2xl rounded-[2rem] p-8 shadow-2xl border-2 border-white">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 text-white flex items-center justify-center shadow-xl shadow-emerald-500/30">
-                    <Languages size={28} />
-                  </div>
-                  <div>
-                    <h3 className="font-black text-2xl text-white">Menu Translated</h3>
-                    <p className="text-sm font-bold text-slate-300">French (€) → English ($ USD)</p>
-                  </div>
+        {scanComplete && (
+          <div className="absolute inset-0 z-20 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-6">
+            <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-slate-700">
+              <div className="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <Languages size={24} />
                 </div>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex justify-between items-center p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl border-2 border-white/10 shadow-sm">
-                    <span className="font-black text-white text-xl">Café au Lait</span>
-                    <span className="font-black text-emerald-600 text-xl">$4.50 <span className="text-sm text-slate-400 line-through ml-1">€4.20</span></span>
-                  </div>
-                  <div className="flex justify-between items-center p-5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl border-2 border-white/10 shadow-sm">
-                    <span className="font-black text-white text-xl">Croissant</span>
-                    <span className="font-black text-emerald-600 text-xl">$2.80 <span className="text-sm text-slate-400 line-through ml-1">€2.60</span></span>
-                  </div>
+                <div>
+                  <h3 className="font-black text-xl text-slate-900 dark:text-white">Translation Complete</h3>
+                  <p className="text-xs font-bold text-slate-500 dark:text-slate-400">EUR (€) → USD ($)</p>
                 </div>
-                
-                <button onClick={() => setScanComplete(false)} className="w-full py-4 bg-slate-900 text-white font-black text-lg rounded-2xl hover:bg-purple-magenta transition-colors shadow-lg">
-                  Scan Another
-                </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              
+              <div className="space-y-3 mb-6">
+                <div className="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
+                  <span className="font-bold text-slate-800 dark:text-slate-200">Café au Lait</span>
+                  <span className="font-black text-emerald-600 dark:text-emerald-400">$4.50 <span className="text-xs text-slate-400 dark:text-slate-500 line-through ml-1">€4.20</span></span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
+                  <span className="font-bold text-slate-800 dark:text-slate-200">Croissant</span>
+                  <span className="font-black text-emerald-600 dark:text-emerald-400">$2.80 <span className="text-xs text-slate-400 dark:text-slate-500 line-through ml-1">€2.60</span></span>
+                </div>
+              </div>
+              
+              <button onClick={() => setScanComplete(false)} className="w-full py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                New Scan
+              </button>
+            </div>
+          </div>
+        )}
 
-        <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20">
-          {isScanning === false && scanComplete === false && (
-            <button onClick={handleScan} className="flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-magenta to-rose-500 text-white font-black text-xl rounded-full shadow-[0_0_50px_rgba(211,169,255,1)] hover:scale-110 active:scale-95 transition-all border-4 border-white">
-              <Scan size={28} /> Analyze Screen
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center z-20">
+          {!isScanning && !scanComplete && (
+            <button onClick={handleScan} className="flex items-center gap-2 px-8 py-4 bg-white text-slate-900 font-black rounded-xl shadow-xl hover:scale-105 transition-transform border border-slate-100">
+              <Scan size={20} className="text-indigo-600" /> Analyze Screen
             </button>
           )}
         </div>
