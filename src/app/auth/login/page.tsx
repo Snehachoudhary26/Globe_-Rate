@@ -1,50 +1,91 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, Mail, Lock } from "lucide-react";
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen w-full flex flex-col lg:flex-row bg-white dark:bg-slate-950 font-sans transition-colors duration-300">
       
-      {/* 100% CRYSTAL CLEAR BACKGROUND IMAGE (NO BLUR OVERLAYS) */}
-      <div className="absolute inset-0 z-0">
-        <Image src="/images/login-image.png" alt="Travel Background" fill className="object-cover" priority />
+      {/* 100% Full Image Column (Never Cropped) */}
+      <div className="relative w-full lg:w-1/2 min-h-[350px] lg:min-h-screen bg-gradient-to-br from-rose-50/60 via-purple-50/40 to-indigo-50/60 dark:from-slate-900 dark:to-slate-950 flex items-center justify-center p-6 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-100 dark:border-white/5">
+        <div className="relative w-full h-full min-h-[300px] lg:min-h-[550px] flex items-center justify-center">
+          <Image 
+            src="/images/login-image.png" 
+            alt="GlobeRate Travel" 
+            fill 
+            className="object-contain drop-shadow-md"
+            priority 
+          />
+        </div>
       </div>
 
-      {/* CENTERED FLOATING CARD */}
-      <div className="relative z-10 w-full max-w-lg p-10 md:p-12 bg-white/95 backdrop-blur-md border border-white rounded-[2.5rem] shadow-[0_20px_80px_rgba(0,0,0,0.15)] mx-4 transform transition-all hover:scale-[1.01]">
-        
-        <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-purple-magenta transition-colors mb-8">
-          <ArrowLeft size={16} /> Back to Home
-        </Link>
-        
-        <div className="text-center mb-8">
-          <div className="w-20 h-20 rounded-full overflow-hidden shadow-lg border-2 border-white bg-white mx-auto mb-6 relative flex items-center justify-center">
-            <Image src="/images/logo-brand.png" alt="Logo" fill className="object-cover" />
+      {/* Auth Form Column */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 lg:p-16">
+        <div className="w-full max-w-md space-y-8">
+          
+          <div className="flex items-center justify-between">
+            <Link href="/" className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+              <ArrowLeft size={16} /> Back to Home
+            </Link>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg overflow-hidden relative shadow-sm border border-slate-200 dark:border-slate-800 bg-white">
+                <Image src="/images/logo-brand.png" alt="Logo" fill className="object-contain p-0.5" />
+              </div>
+              <span className="font-black text-lg text-slate-900 dark:text-white">GlobeRate</span>
+            </div>
           </div>
-          <h2 className="text-4xl font-black text-slate-900 mb-2">Welcome back</h2>
-          <p className="text-slate-600 font-medium">Sign in to your GlobeRate account to track your global budget.</p>
+
+          <div>
+            <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Welcome back</h1>
+            <p className="text-slate-500 dark:text-slate-400 font-medium mt-2">Log in to manage your multi-currency budget.</p>
+          </div>
+
+          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <div>
+              <label className="block text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                <input 
+                  type="email" 
+                  placeholder="name@example.com" 
+                  className="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-sm font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <label className="block text-xs font-black text-slate-500 uppercase tracking-wider">Password</label>
+                <a href="#" className="text-xs font-bold text-indigo-600 hover:text-indigo-700">Forgot password?</a>
+              </div>
+              <div className="relative">
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                <input 
+                  type="password" 
+                  placeholder="••••••••••••" 
+                  className="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-sm font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all"
+                />
+              </div>
+            </div>
+
+            <Link href="/dashboard" className="w-full py-4 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-black text-base rounded-2xl transition-all shadow-lg shadow-indigo-200 dark:shadow-none flex items-center justify-center">
+              Sign In to Dashboard
+            </Link>
+          </form>
+
+          <div className="text-center pt-2">
+            <p className="text-sm font-bold text-slate-500">
+              Don't have an account?{" "}
+              <Link href="/auth/signup" className="text-indigo-600 hover:underline">
+                Create free account
+              </Link>
+            </p>
+          </div>
+
         </div>
-        
-        <form className="space-y-5">
-          <div>
-            <label className="block text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Email</label>
-            <input type="email" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-purple-magenta focus:ring-4 focus:ring-purple-magenta/20 shadow-sm transition-all text-slate-900 font-medium" placeholder="you@example.com" />
-          </div>
-          <div>
-            <label className="block text-xs font-black text-slate-500 uppercase tracking-wider mb-2">Password</label>
-            <input type="password" className="w-full px-5 py-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-purple-magenta focus:ring-4 focus:ring-purple-magenta/20 shadow-sm transition-all text-slate-900 font-medium" placeholder="••••••••" />
-          </div>
-          <button className="w-full py-4 mt-6 rounded-xl bg-gradient-to-r from-purple-magenta to-rose-500 text-white font-black hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(211,169,255,0.6)] transition-all shadow-lg text-lg">
-            Sign In
-          </button>
-        </form>
-        
-        <p className="mt-8 text-center text-sm font-medium text-slate-600">
-          Don't have an account? <Link href="/auth/signup" className="text-purple-magenta font-black hover:underline">Sign up</Link>
-        </p>
       </div>
+
     </div>
   );
 }
