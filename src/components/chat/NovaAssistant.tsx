@@ -13,7 +13,7 @@ export default function NovaAssistant() {
 
   const playPopSound = () => {
     try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
       const osc = ctx.createOscillator();
@@ -28,7 +28,7 @@ export default function NovaAssistant() {
       gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
       osc.start(ctx.currentTime);
       osc.stop(ctx.currentTime + 0.2);
-    } catch (e) {}
+    } catch (e: any) {}
   };
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function NovaAssistant() {
 
   const quickQuestions = ["Is Euronet ATM a scam?", "How much is €50 in USD?", "Where is the cheapest ATM?"];
 
-  const handleAsk = (q) => {
+  const handleAsk = (q: any) => {
     setMessages(prev => [...prev, { role: 'user', text: q }]);
     setIsTyping(true);
     playPopSound();
@@ -112,7 +112,7 @@ export default function NovaAssistant() {
              <div className="p-4 border-t border-slate-100 bg-white flex flex-wrap gap-2">
                <p className="w-full text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Ask a question:</p>
                {quickQuestions.map((q, i) => (
-                 <button key={i} onClick={() => handleAsk(q)} disabled={isTyping} className="text-xs font-bold text-purple-magenta bg-purple-50 border border-purple-100 px-3 py-2 rounded-full hover:bg-purple-100 hover:scale-[1.02] active:scale-95 transition-all text-left">
+                 <button key={i} onClick={() => handleAsk(q: any)} disabled={isTyping} className="text-xs font-bold text-purple-magenta bg-purple-50 border border-purple-100 px-3 py-2 rounded-full hover:bg-purple-100 hover:scale-[1.02] active:scale-95 transition-all text-left">
                    {q}
                  </button>
                ))}

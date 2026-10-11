@@ -64,24 +64,24 @@ export default function Home() {
       {/* HERO SECTION WITH REAL PHOTO */}
       <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 min-h-screen">
         
-        <motion.div className="flex-1 text-center md:text-left z-10" variants={containerVariants} initial="hidden" animate="visible">
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/60 border border-white/80 text-sm font-bold text-slate-800 mb-6 backdrop-blur-md shadow-sm">
+        <motion.div className="flex-1 text-center md:text-left z-10" variants={containerVariants as any} initial="hidden" animate="visible">
+          <motion.div variants={itemVariants as any} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/60 border border-white/80 text-sm font-bold text-slate-800 mb-6 backdrop-blur-md shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-purple-magenta animate-pulse"></span>
             Meet Nova AI: Your Travel Superpower
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
+          <motion.h1 variants={itemVariants as any} className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
             Travel smarter. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sea-green via-purple-magenta to-amber-500">
               Protect your money.
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-800 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium">
+          <motion.p variants={itemVariants as any} className="text-lg md:text-xl text-slate-800 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium">
             The intelligent travel finance platform that detects exchange scams, anchors foreign prices, and tracks your global budget in real-time.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+          <motion.div variants={itemVariants as any} className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             <Link href="/auth/signup" className="w-full sm:w-auto px-8 py-4 rounded-full bg-sea-green text-white font-bold text-lg flex items-center justify-center gap-2 hover:bg-light-teal hover:shadow-xl hover:shadow-sea-green/30 transition-all active:scale-95">
               Start Your Trip <ArrowRight size={20} />
             </Link>
