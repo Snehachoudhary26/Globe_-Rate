@@ -24,7 +24,11 @@ const itemVariants = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#FFF9F0] via-[#F4EFFF] to-[#E6F9F5]">
+    <main className="min-h-screen relative overflow-hidden bg-slate-950 text-white transition-colors duration-300">
+      {/* Pink & Purple Ambient Bubbles */}
+      <div className="absolute top-[-15%] left-[-10%] w-[60vw] h-[60vw] bg-pink-500/20 blur-[160px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-[35%] right-[-15%] w-[55vw] h-[55vw] bg-purple-600/25 blur-[160px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-[20%] w-[50vw] h-[50vw] bg-indigo-500/20 blur-[160px] rounded-full pointer-events-none"></div>
       
       {/* Dynamic Marble Mesh Background for Hero only */}
       <div className="absolute top-0 left-0 w-full h-[120vh] bg-marble-mesh -z-10"></div>
