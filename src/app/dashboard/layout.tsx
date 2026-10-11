@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, Wallet, Smartphone, Map, LogOut, Home, Globe } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -50,7 +50,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <header className="h-24 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-white/10 flex items-center justify-between px-10 z-10">
           <h1 className="text-3xl font-black text-slate-900 dark:text-white hidden md:block">Dashboard</h1>
           <div className="flex items-center gap-6 ml-auto">
-            <ThemeToggle />
+            
             <Link href="/dashboard/profile" className="w-12 h-12 rounded-full border-2 border-indigo-100 dark:border-indigo-900 overflow-hidden relative cursor-pointer hover:scale-105 transition-transform">
                <Image src="/images/hero.jpg" alt="Profile" fill className="object-cover" />
             </Link>

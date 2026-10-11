@@ -34,7 +34,7 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-full h-[120vh] bg-marble-mesh -z-10"></div>
       
       {/* ULTRA-PREMIUM NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-white/20 backdrop-blur-2xl border-b border-white/50 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-white bg-white">
             <Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-cover scale-100" />
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         
         {/* Center Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
+        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-300">
           <Link href="/features" className="hover:text-purple-magenta transition-colors">Features</Link>
           <Link href="/nova-ai" className="hover:text-purple-magenta transition-colors flex items-center gap-1">
             Nova AI <Sparkles size={14} className="text-amber-500" />
@@ -56,7 +56,7 @@ export default function Home() {
           <button className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-600 bg-white/40 px-3 py-1.5 rounded-full hover:bg-white/70 transition-all border border-white/50">
              EN <ChevronDown size={14} />
           </button>
-          <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-700 hover:text-purple-magenta transition-colors">
+          <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-300 hover:text-purple-magenta transition-colors">
             Sign In
           </Link>
           <Link href="/auth/signup" className="px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-bold hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] transition-all">
@@ -81,7 +81,7 @@ export default function Home() {
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants as any} className="text-lg md:text-xl text-slate-800 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium">
+          <motion.p variants={itemVariants as any} className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium">
             The intelligent travel finance platform that detects exchange scams, anchors foreign prices, and tracks your global budget in real-time.
           </motion.p>
 

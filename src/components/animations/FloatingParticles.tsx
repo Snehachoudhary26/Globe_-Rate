@@ -1,50 +1,101 @@
 "use client";
-
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+interface Bubble {
+  id: number;
+  size: number;
+  left: number;
+  duration: number;
+  delay: number;
+  color: string;
+  glow: string;
+}
+
 export default function FloatingParticles() {
-  const [isMounted, setIsMounted] = useState(false);
-  
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+
   useEffect(() => {
-    setIsMounted(true);
+    const bubbleStyles = [
+      {
+        color: "from-[#FF007A]/50 via-[#FF1493]/30 to-[#7928CA]/40 border-[#FF007A]/80",
+        glow: "shadow-[0_0_25px_rgba(255,0,122,0.8)]"
+      },
+      {
+        color: "from-[#7928CA]/50 via-[#9333EA]/30 to-[#4338CA]/40 border-[#9333EA]/80",
+        glow: "shadow-[0_0_25px_rgba(147,51,234,0.8)]"
+      },
+      {
+        color: "from-[#FF007A]/60 to-[#9333EA]/40 border-[#FF007A]/90",
+        glow: "shadow-[0_0_30px_rgba(255,0,122,0.9)]"
+      },
+      {
+        color: "from-[#A855F7]/50 via-[#EC4899]/30 to-[#8B5CF6]/40 border-[#A855F7]/80",
+        glow: "shadow-[0_0_25px_rgba(168,85,247,0.8)]"
+      }
+    ];
+
+    const list: Bubble[] = Array.from({ length: 28 }).map((_, i) => {
+      const style = bubbleStyles[i % bubbleStyles.length];
+      return {
+        id: i,
+        size: Math.floor(Math.random() * 32) + 18, // 18px to 50px
+        left: Math.random() * 100,
+        duration: Math.floor(Math.random() * 10) + 14,
+        delay: Math.random() * 8,
+        color: style.color,
+        glow: style.glow
+      };
+    });
+
+    setBubbles(list);
   }, []);
 
-  if (!isMounted) return null;
-
-  // Generate 15 random particles
-  const particles = Array.from({ length: 15 }).map((_, i) => ({
-    id: i,
-    size: Math.random() * 20 + 10,
-    xStart: Math.random() * 100,
-    delay: Math.random() * 5,
-    duration: Math.random() * 10 + 10,
-  }));
-
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          className="absolute bottom-[-50px] rounded-full bg-white/30 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.4)] border border-white/50"
-          style={{ 
-            width: p.size, 
-            height: p.size,
-            left: `${p.xStart}%` 
+    <div className="fixed inset-0 pointer-events-none z-[45] overflow-hidden">
+      {bubbles.map((b) => (
+        <div
+          key={b.id}
+          className={`absolute rounded-full bg-gradient-to-tr border backdrop-blur-[1.5px] animate-float-bubble ${b.color} ${b.glow}`}
+          style={{
+            width: `${b.size}px`,
+            height: `${b.size}px`,
+            left: `${b.left}%`,
+            bottom: "-60px",
+            animationDuration: `${b.duration}s`,
+            animationDelay: `${b.delay}s`,
           }}
-          animate={{
-            y: [0, -1200],
-            x: [0, Math.random() * 100 - 50, Math.random() * 100 - 50],
-            rotate: [0, 360]
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: "linear"
-          }}
-        />
+        >
+          {/* Specular light spot to look like real floating neon glass bubbles */}
+          <div className="absolute top-[16%] left-[20%] w-[32%] h-[32%] bg-white/80 rounded-full blur-[0.4px]"></div>
+        </div>
       ))}
+      <style jsx global>{`
+        @keyframes floatBubble {
+          0% {
+            transform: translateY(0) translateX(0) scale(0.8);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.95;
+          }
+          50% {
+            transform: translateY(-50vh) translateX(30px) scale(1.15);
+            opacity: 1;
+          }
+          85% {
+            opacity: 0.9;
+          }
+          100% {
+            transform: translateY(-115vh) translateX(-25px) scale(0.85);
+            opacity: 0;
+          }
+        }
+        .animate-float-bubble {
+          animation-name: floatBubble;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+        }
+      `}</style>
     </div>
   );
 }
