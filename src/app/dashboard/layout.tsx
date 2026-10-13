@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <aside className="w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-white/10 flex flex-col hidden md:flex z-20">
         <div className="p-8 border-b border-slate-100 dark:border-white/5">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 rounded-xl overflow-hidden relative shadow-sm border border-slate-200 dark:border-slate-800 bg-white"><Image src="/images/logo-brand.png" alt="Logo" fill className="object-contain p-1" /></div>
+            <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-md flex-shrink-0 border border-white/20"><Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-cover" priority /></div>
             <span className="font-black text-2xl tracking-tight text-slate-900 dark:text-white">GlobeRate</span>
           </Link>
         </div>
