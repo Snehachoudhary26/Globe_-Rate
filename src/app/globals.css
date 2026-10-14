@@ -151,3 +151,38 @@
     radial-gradient(at 0% 100%, #FFF9DB 0px, transparent 50%);
   background-size: 100% 100%;
 }
+
+/* --- REAL BUBBLE FLOAT ANIMATIONS --- */
+@keyframes bubbleFloatUp {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.18;
+  }
+  33% {
+    transform: translateY(-40px) translateX(25px) scale(1.1);
+    opacity: 0.26;
+  }
+  66% {
+    transform: translateY(-80px) translateX(-20px) scale(0.95);
+    opacity: 0.22;
+  }
+  100% {
+    transform: translateY(-130px) translateX(15px) scale(1.05);
+    opacity: 0.15;
+  }
+}
+
+@keyframes bubbleFloatSway {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.95);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translateY(-60px) translateX(-35px) scale(1.12);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translateY(-120px) translateX(20px) scale(1);
+    opacity: 0.18;
+  }
+}
