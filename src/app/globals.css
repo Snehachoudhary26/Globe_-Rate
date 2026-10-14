@@ -152,37 +152,29 @@
   background-size: 100% 100%;
 }
 
-/* --- REAL BUBBLE FLOAT ANIMATIONS --- */
+
+
+/* --- REAL VISIBLE BUBBLE FLOAT ANIMATIONS --- */
 @keyframes bubbleFloatUp {
   0% {
     transform: translateY(0px) translateX(0px) scale(1);
-    opacity: 0.18;
   }
-  33% {
-    transform: translateY(-40px) translateX(25px) scale(1.1);
-    opacity: 0.26;
-  }
-  66% {
-    transform: translateY(-80px) translateX(-20px) scale(0.95);
-    opacity: 0.22;
+  50% {
+    transform: translateY(-50px) translateX(30px) scale(1.08);
   }
   100% {
-    transform: translateY(-130px) translateX(15px) scale(1.05);
-    opacity: 0.15;
+    transform: translateY(-110px) translateX(-20px) scale(0.96);
   }
 }
 
 @keyframes bubbleFloatSway {
   0% {
-    transform: translateY(0px) translateX(0px) scale(0.95);
-    opacity: 0.16;
+    transform: translateY(0px) translateX(0px) scale(0.96);
   }
   50% {
-    transform: translateY(-60px) translateX(-35px) scale(1.12);
-    opacity: 0.28;
+    transform: translateY(-60px) translateX(-35px) scale(1.1);
   }
   100% {
-    transform: translateY(-120px) translateX(20px) scale(1);
-    opacity: 0.18;
+    transform: translateY(-120px) translateX(25px) scale(1);
   }
 }
