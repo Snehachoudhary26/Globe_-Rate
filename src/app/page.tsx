@@ -1,14 +1,23 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles, ShieldAlert, ChevronDown, Droplets, LineChart, Star } from "lucide-react";
+import { 
+  ArrowRight, 
+  Sparkles, 
+  ShieldAlert, 
+  ChevronDown, 
+  Droplets, 
+  LineChart, 
+  Star,
+  Compass 
+} from "lucide-react";
 import FloatingParticles from "@/components/animations/FloatingParticles";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans relative overflow-x-hidden selection:bg-[#FF007A] selection:text-white">
       
-      {/* Moving Pink & Purple Bubbles */}
+      {/* 11 Minimal Floating Bubbles */}
       <FloatingParticles />
 
       {/* Subtle Pastel Ambient Glows */}
@@ -227,8 +236,7 @@ export default function Home() {
         </div>
       </section>
 
-      {
-      {/* 3-STEP TRIP GUIDANCE WALKTHROUGH */}
+      {/* 6. 3-STEP TRIP GUIDANCE WALKTHROUGH */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF007A]/10 text-[#FF007A] text-sm font-black mb-4 border border-[#FF007A]/25">
@@ -244,7 +252,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* STEP 1 */}
+          {/* Step 1 */}
           <div className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-[#FF007A] to-rose-500 text-white font-black text-xl flex items-center justify-center mb-6 shadow-md">
@@ -260,7 +268,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* STEP 2 */}
+          {/* Step 2 */}
           <div className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-[#A855F7] to-purple-600 text-white font-black text-xl flex items-center justify-center mb-6 shadow-md">
@@ -276,7 +284,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* STEP 3 */}
+          {/* Step 3 */}
           <div className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-black text-xl flex items-center justify-center mb-6 shadow-md">
@@ -295,7 +303,7 @@ export default function Home() {
         </div>
       </section>
 
-      /* 6. EVERYTHING YOU NEED */}
+      {/* 7. EVERYTHING YOU NEED */}
       <section className="py-20 px-6 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black text-slate-900 tracking-tight mb-4">Everything you need.</h2>
@@ -338,7 +346,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. EXACT TESTIMONIALS SECTION (With Aditi Sharma Photo & Cream/Lavender Cards) */}
+      {/* 8. TESTIMONIALS SECTION (With Aditi Sharma Photo & Cream/Lavender Cards) */}
       <section className="py-28 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
@@ -405,7 +413,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. FOOTER */}
+      {/* 9. FOOTER */}
       <footer className="w-full bg-white border-t border-slate-200 py-12 px-6 md:px-12 relative z-10 text-slate-600">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
