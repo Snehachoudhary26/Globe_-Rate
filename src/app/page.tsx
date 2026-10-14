@@ -11,7 +11,8 @@ import {
   Star,
   Compass 
 } from "lucide-react";
-import FloatingParticles from "@/components/animations/FloatingParticles";\nimport CountrySearchBar from "@/components/search/CountrySearchBar";
+import FloatingParticles from "@/components/animations/FloatingParticles";
+import CountrySearchBar from "@/components/search/CountrySearchBar";
 
 export default function Home() {
   return (
@@ -56,21 +57,21 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 1. HERO SECTION (hero.jpg) */}
-      <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 min-h-screen relative z-10">
+      {/* 1. HERO SECTION */}
+      <section className="pt-40 pb-16 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
         <div className="flex-1 text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#A855F7]/10 border border-[#A855F7]/25 text-sm font-black text-[#A855F7] mb-6 backdrop-blur-md">
             <span className="flex h-2 w-2 rounded-full bg-[#FF007A] animate-pulse"></span>
             Meet Nova AI: Your Travel Superpower
           </div>
-
+          
           <h1 className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1] mb-6">
             Travel smarter. <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007A] via-[#A855F7] to-[#FACC15]">
               Protect your money.
             </span>
           </h1>
-
+          
           <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-medium">
             The intelligent travel finance platform that detects exchange scams, anchors foreign prices, and tracks your global budget in real-time.
           </p>
@@ -98,8 +99,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. NOVA AI VISION (nova_ai.jpg) */}
-      <section className="py-28 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+      {/* 1.5. INTERACTIVE DESTINATION & RATE SEARCH HUB */}
+      <section className="pb-20 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <CountrySearchBar />
+      </section>
+
+      {/* 2. NOVA AI VISION */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
         <div className="flex-1 relative w-full aspect-[4/3] rounded-[2.5rem] shadow-2xl flex items-center justify-center overflow-hidden border-4 border-white">
           <Image src="/images/nova_ai.jpg" alt="Nova AI scanning cafe menu" fill className="object-cover" />
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-xl px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-slate-200/80">
@@ -127,18 +133,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. SCAM PROTECTION (atm.jpg) */}
-      <section className="py-28 px-6 md:px-12 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 relative z-10">
+      {/* 3. SCAM PROTECTION */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 relative z-10">
         <div className="flex-1">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF007A]/10 text-[#FF007A] text-sm font-black mb-6 border border-[#FF007A]/25">
             <ShieldAlert size={16} /> Scam Protection
           </div>
-
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
             Never fall for <br />
             <span className="text-[#FF007A]">&quot;0% Commission&quot;</span> again.
           </h2>
-
           <p className="text-lg text-slate-600 mb-8 leading-relaxed font-medium">
             Airport exchange booths hide unfair fees inside terrible exchange rates. Enter the rate they offer you, and we instantly expose their hidden markup against the real mid-market rate.
           </p>
@@ -165,21 +169,29 @@ export default function Home() {
       </section>
 
       {/* 4. PRICE ANCHOR */}
-      <section className="py-28 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
         <div className="flex-1 space-y-4">
-          {[
-            { price: "¥1,200", feels: "1 Medium Pizza" },
-            { price: "€4.50", feels: "3 Espresso Coffees" },
-            { price: "฿250", feels: "2 Days Metro Pass" },
-          ].map((item, i) => (
-            <div key={i} className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-between shadow-md">
-              <div>
-                <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block">Foreign Price</span>
-                <span className="text-2xl font-black text-slate-900">{item.price}</span>
-              </div>
-              <span className="text-[#FF007A] font-black text-sm">→ Feels like {item.feels}</span>
+          <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-between shadow-md">
+            <div>
+              <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block">Foreign Price</span>
+              <span className="text-2xl font-black text-slate-900">¥1,200</span>
             </div>
-          ))}
+            <span className="text-[#FF007A] font-black text-sm">→ Feels like 1 Medium Pizza</span>
+          </div>
+          <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-between shadow-md">
+            <div>
+              <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block">Foreign Price</span>
+              <span className="text-2xl font-black text-slate-900">€4.50</span>
+            </div>
+            <span className="text-[#FF007A] font-black text-sm">→ Feels like 3 Espresso Coffees</span>
+          </div>
+          <div className="p-5 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-between shadow-md">
+            <div>
+              <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block">Foreign Price</span>
+              <span className="text-2xl font-black text-slate-900">฿250</span>
+            </div>
+            <span className="text-[#FF007A] font-black text-sm">→ Feels like 2 Days Metro Pass</span>
+          </div>
         </div>
 
         <div className="flex-1">
@@ -193,8 +205,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. BUDGET RIVER (budget.jpg) */}
-      <section className="py-28 px-6 md:px-12 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 relative z-10">
+      {/* 5. BUDGET RIVER */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 relative z-10">
         <div className="flex-1">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 text-cyan-600 text-sm font-black mb-6 border border-cyan-500/25">
             <Droplets size={16} /> Financial Clarity
@@ -346,8 +358,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. TESTIMONIALS SECTION (With Aditi Sharma Photo & Cream/Lavender Cards) */}
-      <section className="py-28 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+      {/* 8. TESTIMONIALS */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
             Loved by global <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007A] to-[#A855F7]">travelers.</span>
@@ -357,23 +369,23 @@ export default function Home() {
 
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
           
-          {/* LEFT: PHOTO OF ADITI SHARMA (testimonial.jpg) WITH QUOTE OVERLAY */}
+          {/* Main Photo Card */}
           <div className="flex-1 relative min-h-[460px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white group">
             <Image 
               src="/images/testimonial.jpg" 
               alt="Happy traveler" 
               fill 
               className="object-cover group-hover:scale-105 transition-transform duration-700" 
-              priority 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent"></div>
+            
             <div className="absolute bottom-0 left-0 p-8 md:p-10 text-white">
               <div className="flex gap-1 mb-3 text-amber-400">
-                <Star size={18} fill="currentColor"/>
-                <Star size={18} fill="currentColor"/>
-                <Star size={18} fill="currentColor"/>
-                <Star size={18} fill="currentColor"/>
-                <Star size={18} fill="currentColor"/>
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
+                <Star size={18} fill="currentColor" />
               </div>
               <p className="text-xl md:text-2xl font-bold mb-4 leading-relaxed">
                 &quot;GlobeRate&apos;s Scam Detector literally saved me ₹12,000 at the Bangkok airport. Nova AI is basically magic.&quot;
@@ -383,10 +395,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* RIGHT: SOFT CREAM AND LAVENDER CARDS */}
+          {/* Right Cards */}
           <div className="flex-1 flex flex-col gap-6">
             
-            {/* Card 1: Soft Cream Card */}
             <div className="flex-1 bg-[#FFF9EE] text-slate-900 p-8 md:p-10 rounded-[2.5rem] border border-amber-100 shadow-xl flex flex-col justify-between relative overflow-hidden">
               <p className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed mb-6">
                 &quot;The Budget River feature is insane. It&apos;s the first time I actually understand how much I&apos;m spending across 3 different European currencies.&quot;
@@ -397,7 +408,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 2: Soft Lavender Card */}
             <div className="flex-1 bg-[#F3E8FF] text-slate-900 p-8 md:p-10 rounded-[2.5rem] border border-purple-100 shadow-xl flex flex-col justify-between relative overflow-hidden">
               <p className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed mb-6">
                 &quot;I love the Price Anchor! Seeing that a ¥1,200 meal in Tokyo is just &apos;1 Domino&apos;s Pizza&apos; immediately stopped me from overspending.&quot;
