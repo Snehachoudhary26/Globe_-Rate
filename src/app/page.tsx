@@ -11,7 +11,7 @@ import {
   Star,
   Compass 
 } from "lucide-react";
-import FloatingParticles from "@/components/animations/FloatingParticles";
+import FloatingParticles from "@/components/animations/FloatingParticles";\nimport CountrySearchBar from "@/components/search/CountrySearchBar";
 
 export default function Home() {
   return (
