@@ -56,7 +56,7 @@
 
 <div align="center">
   <h3>🌟 5. Loved by Global Travelers</h3>
-  <img src="./public/images/testimonial.jpg" width="85%" style="border-radius: 20px;" alt="Aditi Sharma Solo Traveler" />
+ 
   <p><i>"The Scam Detector literally saved me ₹12,000 at Bangkok airport on my first day."</i></p>
 </div>
 
