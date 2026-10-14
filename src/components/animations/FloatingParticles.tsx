@@ -9,30 +9,28 @@ interface Particle {
   duration: number;
   delay: number;
   color: string;
-  animationType: string;
 }
 
 export default function FloatingParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    // Medium-intensity translucent colors (not loud, not invisible)
+    // Balanced medium palette: visible, elegant, but never distracting
     const colors = [
-      "rgba(255, 0, 122, 0.24)",  // Medium Soft Rose Pink
-      "rgba(168, 85, 247, 0.22)", // Medium Soft Lavender Purple
-      "rgba(6, 182, 212, 0.20)",  // Medium Soft Cyan/Teal
-      "rgba(250, 204, 21, 0.18)", // Medium Soft Butter Yellow
+      "rgba(255, 0, 122, 0.22)",   // Medium Soft Rose Pink
+      "rgba(168, 85, 247, 0.20)",  // Medium Soft Lavender Purple
+      "rgba(6, 182, 212, 0.18)",   // Medium Soft Cyan/Teal
+      "rgba(250, 204, 21, 0.16)",  // Subtle Warm Butter
     ];
 
-    const generated: Particle[] = Array.from({ length: 22 }).map((_, i) => ({
+    const generated: Particle[] = Array.from({ length: 18 }).map((_, i) => ({
       id: i,
-      x: Math.random() * 96 + 2,   // Keep within 2% - 98% width
-      y: Math.random() * 90 + 5,   // Keep within 5% - 95% height
-      size: Math.random() * 32 + 18, // 18px to 50px
-      duration: Math.random() * 6 + 8, // 8s to 14s (clearly visible float)
-      delay: -(Math.random() * 10),    // Negative delay so they are ALREADY moving on load!
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 32 + 16, // Medium elegant size (16px - 48px)
+      duration: Math.random() * 18 + 14, // Relaxing slow float (14s - 32s)
+      delay: Math.random() * 6,
       color: colors[i % colors.length],
-      animationType: i % 2 === 0 ? "bubbleFloatUp" : "bubbleFloatSway",
     }));
 
     setParticles(generated);
@@ -43,19 +41,31 @@ export default function FloatingParticles() {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full backdrop-blur-[2px] border border-white/20"
+          className="absolute rounded-full backdrop-blur-[2px] border border-white/15 shadow-sm"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: `${p.size}px`,
             height: `${p.size}px`,
             backgroundColor: p.color,
-            boxShadow: `0 0 20px ${p.color}`,
-            animation: `${p.animationType} ${p.duration}s ease-in-out ${p.delay}s infinite alternate`,
-            willChange: "transform, opacity",
+            boxShadow: `0 0 15px ${p.color}`,
+            animation: `floatBubble ${p.duration}s ease-in-out ${p.delay}s infinite alternate`,
           }}
         />
       ))}
+      <style jsx>{`
+        @keyframes floatBubble {
+          0% {
+            transform: translateY(0px) translateX(0px) scale(1);
+          }
+          50% {
+            transform: translateY(-45px) translateX(25px) scale(1.08);
+          }
+          100% {
+            transform: translateY(-90px) translateX(-20px) scale(0.95);
+          }
+        }
+      `}</style>
     </div>
   );
 }
