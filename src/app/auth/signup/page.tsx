@@ -7,15 +7,29 @@ export default function SignupPage() {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden font-sans">
       
-      {/* 100% Full Screen Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/login-image.png" 
-          alt="GlobeRate Background" 
-          fill 
-          className="object-cover object-center"
-          priority 
-        />
+      {/* Background Container: Ambient Glow + Full Uncropped Artwork */}
+      <div className="absolute inset-0 z-0 bg-[#FDF2F8] overflow-hidden">
+        {/* Layer 1: Ambient Blurred Backdrop to smoothly fill fullscreen height */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image 
+            src="/images/login-image.png" 
+            alt="GlobeRate Background Glow" 
+            fill 
+            className="object-cover blur-2xl opacity-50 scale-105"
+            priority 
+          />
+        </div>
+
+        {/* Layer 2: 100% Crisp Artwork (Never crops ATM on left or Phone on right at any resolution) */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+          <Image 
+            src="/images/login-image.png" 
+            alt="GlobeRate Background" 
+            fill 
+            className="object-contain object-center"
+            priority 
+          />
+        </div>
       </div>
 
       {/* Floating Auth Card Placed Directly in the Middle Empty Space */}
