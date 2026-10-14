@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  passwordHash String
+  homeCurrency String    @default("INR")
+  trips        Trip[]
+  createdAt    DateTime  @default(now())
+}
+
+model Trip {
+  id           String    @id @default(cuid())
+  title        String
+  destination  String
+  totalBudget  Float
+  currency     String    @default("INR")
+  userId       String?
+  user         User?     @relation(fields: [userId], references: [id])
+  expenses     Expense[]
+  createdAt    DateTime  @default(now())
+}
+
+model Expense {
+  id              String   @id @default(cuid())
+  title           String
+  category        String   // Food, Transport, Stay, ATM Fee
+  amountForeign   Float
+  currencyForeign String   // JPY, EUR, THB, USD
+  amountHome      Float    // Converted to home currency (e.g. INR)
+  tripId          String
+  trip            Trip     @relation(fields: [tripId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+}
+
+model ScamReport {
+  id              String   @id @default(cuid())
+  city            String
+  locationName    String
+  reportedMarkup  Float
+  fairRate        Float
+  offeredRate     Float
+  verified        Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}

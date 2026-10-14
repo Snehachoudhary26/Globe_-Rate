@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.87",
@@ -14,6 +15,7 @@
     "@hookform/resolvers": "^5.9.1",
     "@langchain/core": "^1.2.14",
     "@langchain/google-genai": "^2.3.2",
+    "@prisma/client": "^7.10.0",
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.1",
     "ai": "^7.0.127",
@@ -49,6 +51,7 @@
     "@types/three": "^0.186.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.8",
+    "prisma": "^8.0.0-rc.22",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
