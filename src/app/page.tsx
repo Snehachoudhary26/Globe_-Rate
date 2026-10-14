@@ -227,7 +227,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. EVERYTHING YOU NEED */}
+      {
+      {/* 3-STEP TRIP GUIDANCE WALKTHROUGH */}
+      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF007A]/10 text-[#FF007A] text-sm font-black mb-4 border border-[#FF007A]/25">
+            <Compass size={16} /> Foreign Traveler Direction Guide
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
+            How GlobeRate guides you in 3 simple steps.
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+            Scared of airport exchange rip-offs? Here is your exact playbook the moment your flight lands.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* STEP 1 */}
+          <div className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-[#FF007A] to-rose-500 text-white font-black text-xl flex items-center justify-center mb-6 shadow-md">
+                1
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3">Search Your Country</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-medium mb-6">
+                Type India, Japan, Thailand, or France. Our Radar reveals all verified 0% bank ATMs and flags the local tourist trap machines to avoid.
+              </p>
+            </div>
+            <Link href="/dashboard/map" className="inline-flex items-center gap-2 text-sm font-black text-[#FF007A] hover:underline">
+              Search Countries Now <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* STEP 2 */}
+          <div className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-[#A855F7] to-purple-600 text-white font-black text-xl flex items-center justify-center mb-6 shadow-md">
+                2
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3">Check the Rate Offer</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-medium mb-6">
+                At the ATM or currency counter, enter the rate they show on screen. We expose their hidden markup against the real interbank mid-market rate.
+              </p>
+            </div>
+            <Link href="/dashboard/nova" className="inline-flex items-center gap-2 text-sm font-black text-[#A855F7] hover:underline">
+              Test Scam Scanner <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* STEP 3 */}
+          <div className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-black text-xl flex items-center justify-center mb-6 shadow-md">
+                3
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 mb-3">Always Choose Local Cash</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-medium mb-6">
+                When the foreign machine asks &quot;Charge in Home Currency or Local Cash?&quot;, always pick Local Cash to avoid the 12% DCC bank trap!
+              </p>
+            </div>
+            <Link href="/dashboard/budget" className="inline-flex items-center gap-2 text-sm font-black text-cyan-600 hover:underline">
+              Monitor Budget River <ArrowRight size={16} />
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+      /* 6. EVERYTHING YOU NEED */}
       <section className="py-20 px-6 max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-black text-slate-900 tracking-tight mb-4">Everything you need.</h2>
