@@ -5,13 +5,12 @@ import {
   ShieldAlert, 
   Sparkles, 
   Droplets, 
-  ArrowRight, 
-  Check, 
   ChevronDown, 
   Smartphone, 
   Compass, 
   Eye, 
-  Zap 
+  Zap, 
+  Check 
 } from "lucide-react";
 import FloatingParticles from "@/components/animations/FloatingParticles";
 
@@ -62,66 +61,66 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans relative overflow-x-hidden selection:bg-[#FF007A] selection:text-white">
+    <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans relative overflow-x-hidden selection:bg-[#FF007A] selection:text-white">
       
-      {/* 1. YOUR MOVING BUBBLES */}
+      {/* Pink & Purple Bubbles */}
       <FloatingParticles />
 
-      {/* 2. SUBTLE AMBIENT GLOWS (Matches Homepage) */}
-      <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] bg-[#FF007A]/10 blur-[180px] rounded-full pointer-events-none"></div>
-      <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] bg-[#A855F7]/15 blur-[180px] rounded-full pointer-events-none"></div>
+      {/* Pastel Ambient Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] bg-pink-200/40 blur-[180px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] bg-purple-200/40 blur-[180px] rounded-full pointer-events-none"></div>
 
-      {/* 3. NAVBAR (With Exact Circular Logo Badge) */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-slate-950/80 backdrop-blur-xl border-b border-white/10 shadow-lg">
+      {/* NAVBAR */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-md flex-shrink-0 border border-white/20">
+          <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-md flex-shrink-0 border border-slate-200">
             <Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-cover" priority />
           </div>
-          <span className="text-2xl font-black tracking-tight text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+          <span className="text-2xl font-black tracking-tight text-slate-900">
             GlobeRate
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-200">
+        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
           <Link href="/features" className="text-[#FF007A] transition-colors">Features</Link>
           <Link href="/dashboard/nova" className="hover:text-[#FF007A] transition-colors flex items-center gap-1">
-            Nova AI <Sparkles size={14} className="text-[#FACC15]" />
+            Nova AI <Sparkles size={14} className="text-[#FF007A]" />
           </Link>
           <Link href="/dashboard/map" className="hover:text-[#FF007A] transition-colors">Destinations</Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-200 bg-white/10 px-3 py-1.5 rounded-full hover:bg-white/20 transition-all border border-white/10">
+          <button className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-slate-200 transition-all border border-slate-200">
             EN <ChevronDown size={14} />
           </button>
-          <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-200 hover:text-white transition-colors">
+          <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-700 hover:text-slate-900 transition-colors">
             Sign In
           </Link>
-          <Link href="/auth/signup" className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-sm font-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,0,122,0.5)] transition-all">
+          <Link href="/auth/signup" className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-sm font-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,0,122,0.4)] transition-all">
             Get Started
           </Link>
         </div>
       </nav>
 
-      {/* 4. HEADER */}
+      {/* HEADER */}
       <section className="pt-40 pb-16 px-6 md:px-12 max-w-7xl mx-auto text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF007A]/15 border border-[#FF007A]/30 text-sm font-black text-[#FF007A] mb-6 backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF007A]/10 border border-[#FF007A]/25 text-sm font-black text-[#FF007A] mb-6 backdrop-blur-md">
           <Zap size={16} /> All Features & Capabilities
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight text-white leading-[1.1] mb-6">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1] mb-6">
           Everything built to <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007A] via-[#A855F7] to-[#FACC15] drop-shadow-[0_0_35px_rgba(255,0,122,0.5)]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007A] via-[#A855F7] to-[#FACC15]">
             protect your travel money.
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
+        <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
           Over 21 powerful financial tools designed to keep you safe from airport currency markups and overspending.
         </p>
       </section>
 
-      {/* 5. FEATURE CARDS GRID (Exact Home Screen Style) */}
+      {/* FEATURE CARDS */}
       <section className="pb-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tools.map((item, idx) => {
@@ -129,33 +128,33 @@ export default function FeaturesPage() {
             return (
               <div 
                 key={idx}
-                className="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 hover:border-white/20 transition-all shadow-xl hover:-translate-y-2 flex flex-col justify-between"
+                className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div 
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-lg"
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-md"
                       style={{ backgroundColor: item.color }}
                     >
                       <Icon size={26} />
                     </div>
                     <span 
                       className="text-xs font-black px-3 py-1 rounded-full border"
-                      style={{ color: item.color, borderColor: `${item.color}40`, backgroundColor: `${item.color}15` }}
+                      style={{ color: item.color, borderColor: `${item.color}30`, backgroundColor: `${item.color}10` }}
                     >
                       {item.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-black text-white mb-3">
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-slate-200 text-sm font-medium leading-relaxed mb-6">
+                  <p className="text-slate-600 text-sm font-medium leading-relaxed mb-6">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2 text-sm font-black pt-4 border-t border-white/10" style={{ color: item.color }}>
+                <div className="flex items-center gap-2 text-sm font-black pt-4 border-t border-slate-100" style={{ color: item.color }}>
                   <span>Included in GlobeRate</span>
                   <Check size={16} />
                 </div>
@@ -165,20 +164,20 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* 6. FOOTER */}
-      <footer className="w-full bg-slate-950 border-t border-white/10 py-12 px-6 md:px-12 relative z-10 text-slate-300">
+      {/* FOOTER */}
+      <footer className="w-full bg-white border-t border-slate-200 py-12 px-6 md:px-12 relative z-10 text-slate-600">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-sm flex-shrink-0 border border-white/20">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-sm flex-shrink-0 border border-slate-200">
               <Image src="/images/logo-brand.png" alt="Logo" fill className="object-cover" />
             </div>
-            <span className="text-xl font-black text-white">GlobeRate</span>
+            <span className="text-xl font-black text-slate-900">GlobeRate</span>
           </div>
           <p className="text-sm font-medium">© 2026 GlobeRate. Built for smarter global travel finance.</p>
-          <div className="flex gap-6 text-sm font-bold text-slate-200">
-            <Link href="/" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="/" className="hover:text-white transition-colors">Contact</Link>
+          <div className="flex gap-6 text-sm font-bold text-slate-600">
+            <Link href="/" className="hover:text-slate-900 transition-colors">Privacy</Link>
+            <Link href="/" className="hover:text-slate-900 transition-colors">Terms</Link>
+            <Link href="/" className="hover:text-slate-900 transition-colors">Contact</Link>
           </div>
         </div>
       </footer>

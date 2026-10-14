@@ -18,39 +18,39 @@ export default function FloatingParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    // Medium, clearly visible luminous glass palette
+    // Exact Pink and Purple Palette (Vibrant on White)
     const themes = [
       {
-        bg: "rgba(255, 0, 122, 0.35)",     // Neon Rose Pink (visible, translucent)
-        border: "rgba(255, 120, 180, 0.65)", // Crisp glowing rim
-        glow: "rgba(255, 0, 122, 0.45)",
+        bg: "rgba(255, 0, 122, 0.35)",     // Neon Rose Pink
+        border: "rgba(255, 0, 122, 0.65)", // Crisp Pink Border
+        glow: "rgba(255, 0, 122, 0.25)",
       },
       {
-        bg: "rgba(168, 85, 247, 0.35)",    // Neon Violet / Purple
-        border: "rgba(210, 150, 255, 0.65)",
-        glow: "rgba(168, 85, 247, 0.45)",
+        bg: "rgba(168, 85, 247, 0.35)",    // Neon Lavender Purple
+        border: "rgba(168, 85, 247, 0.65)", // Crisp Purple Border
+        glow: "rgba(168, 85, 247, 0.25)",
       },
       {
-        bg: "rgba(6, 182, 212, 0.32)",     // Electric Cyan / Teal
-        border: "rgba(120, 235, 255, 0.65)",
-        glow: "rgba(6, 182, 212, 0.40)",
+        bg: "rgba(6, 182, 212, 0.30)",     // Soft Cyan Accent
+        border: "rgba(6, 182, 212, 0.60)",
+        glow: "rgba(6, 182, 212, 0.20)",
       },
       {
-        bg: "rgba(250, 204, 21, 0.28)",    // Warm Butter Yellow
-        border: "rgba(255, 235, 130, 0.60)",
-        glow: "rgba(250, 204, 21, 0.35)",
+        bg: "rgba(250, 204, 21, 0.30)",    // Soft Butter Accent
+        border: "rgba(250, 204, 21, 0.60)",
+        glow: "rgba(250, 204, 21, 0.20)",
       },
     ];
 
-    const generated: Particle[] = Array.from({ length: 20 }).map((_, i) => {
+    const generated: Particle[] = Array.from({ length: 22 }).map((_, i) => {
       const t = themes[i % themes.length];
       return {
         id: i,
-        x: Math.random() * 94 + 3,        // Keep nicely on screen (3% - 97%)
+        x: Math.random() * 94 + 3,
         y: Math.random() * 88 + 6,
-        size: Math.random() * 30 + 35,    // Medium size: 35px to 65px!
-        duration: Math.random() * 6 + 9,  // 9s to 15s gentle float
-        delay: -(Math.random() * 10),     // Active immediately on page load
+        size: Math.random() * 30 + 35, // 35px to 65px medium size
+        duration: Math.random() * 6 + 9,
+        delay: -(Math.random() * 10),
         bg: t.bg,
         border: t.border,
         glow: t.glow,
@@ -66,7 +66,7 @@ export default function FloatingParticles() {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full backdrop-blur-[3px]"
+          className="absolute rounded-full backdrop-blur-[2px]"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
@@ -74,7 +74,7 @@ export default function FloatingParticles() {
             height: `${p.size}px`,
             backgroundColor: p.bg,
             border: `1.5px solid ${p.border}`,
-            boxShadow: `0 0 22px ${p.glow}, inset 0 0 10px rgba(255, 255, 255, 0.25)`,
+            boxShadow: `0 0 20px ${p.glow}, inset 0 0 8px rgba(255, 255, 255, 0.6)`,
             animation: `${p.animationType} ${p.duration}s ease-in-out ${p.delay}s infinite alternate`,
             willChange: "transform",
           }}
