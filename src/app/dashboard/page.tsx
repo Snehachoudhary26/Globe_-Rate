@@ -76,7 +76,7 @@ export default function FinancialOverviewPage() {
         
         {/* Top Header */}
         <div className="mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF007A]/10 text-[#FF007A] text-xs font-black mb-3 border border-[#FF007A]/20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF007A]/10 text-[#49263F] text-xs font-black mb-3 border border-[#FF007A]/20">
             <Wallet size={14} /> Global Travel Vault
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
@@ -94,7 +94,7 @@ export default function FinancialOverviewPage() {
           <div className="lg:col-span-2 bg-white rounded-[2.5rem] border border-slate-200/90 p-8 md:p-10 shadow-xl relative overflow-hidden flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-[#FF007A] text-xs font-black">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFECE8] text-[#49263F] text-xs font-black">
                   <span className="w-2 h-2 rounded-full bg-[#FF007A] animate-pulse"></span>
                   EURO TRIP BUDGET
                 </span>
@@ -118,7 +118,7 @@ export default function FinancialOverviewPage() {
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
               <button 
                 onClick={() => setBalance(prev => prev + 500)}
-                className="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-sm font-black hover:opacity-95 transition-all shadow-[0_0_20px_rgba(255,0,122,0.35)] flex items-center gap-2"
+                className="px-6 py-3 rounded-2xl bg-[#49263F] hover:bg-[#3E1F35] text-white text-sm font-black hover:opacity-95 transition-all shadow-[0_0_20px_rgba(255,0,122,0.35)] flex items-center gap-2"
               >
                 <Plus size={16} /> Add Funds
               </button>
@@ -134,7 +134,7 @@ export default function FinancialOverviewPage() {
           {/* Card 2: Scam Avoided Card */}
           <div className="lg:col-span-1 bg-white rounded-[2.5rem] border border-slate-200/90 p-8 shadow-xl flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-pink-50 text-[#FF007A] border border-pink-200 flex items-center justify-center mb-6 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-[#EFECE8] text-[#49263F] border border-[#DDD7D0] flex items-center justify-center mb-6 shadow-sm">
                 <ShieldCheck size={26} />
               </div>
 
@@ -163,7 +163,7 @@ export default function FinancialOverviewPage() {
               <h2 className="text-2xl font-black text-slate-900 tracking-tight">Your 22+ Travel Tools</h2>
               <p className="text-xs text-slate-500 font-medium mt-0.5">Quick access to intelligent currency, budget, and scam tools.</p>
             </div>
-            <Link href="/dashboard/tools" className="text-xs font-black text-[#FF007A] hover:underline flex items-center gap-1">
+            <Link href="/dashboard/tools" className="text-xs font-black text-[#49263F] hover:underline flex items-center gap-1">
               Explore All Tools <ArrowRight size={13} />
             </Link>
           </div>
@@ -173,18 +173,18 @@ export default function FinancialOverviewPage() {
               <Link 
                 key={tool.name}
                 href={tool.href}
-                className="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-pink-300 transition-all group flex flex-col justify-between min-h-[140px]"
+                className="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-[#49263F]/40 transition-all group flex flex-col justify-between min-h-[140px]"
               >
                 <div>
                   <div className={`w-10 h-10 rounded-2xl bg-gradient-to-r ${tool.color} mb-3 shadow-md`} />
-                  <h4 className="text-base font-black text-slate-900 group-hover:text-[#FF007A] transition-colors">
+                  <h4 className="text-base font-black text-slate-900 group-hover:text-[#49263F] transition-colors">
                     {tool.name}
                   </h4>
                   <p className="text-xs text-slate-500 font-medium mt-1">
                     {tool.desc}
                   </p>
                 </div>
-                <div className="flex items-center justify-end text-slate-400 group-hover:text-[#FF007A] transition-colors mt-2">
+                <div className="flex items-center justify-end text-slate-400 group-hover:text-[#49263F] transition-colors mt-2">
                   <ArrowRight size={16} />
                 </div>
               </Link>

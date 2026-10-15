@@ -64,7 +64,7 @@ export default function SignupPage() {
                 type="text" 
                 placeholder="Sneha Choudhary" 
                 defaultValue="Sneha Choudhary"
-                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF007A] transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#49263F] transition-all"
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function SignupPage() {
                 type="email" 
                 placeholder="name@example.com" 
                 defaultValue="snehachoudhary2620@gmail.com"
-                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF007A] transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#49263F] transition-all"
               />
             </div>
           </div>
@@ -89,12 +89,12 @@ export default function SignupPage() {
               <input 
                 type="password" 
                 placeholder="••••••••••••" 
-                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF007A] transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#49263F] transition-all"
               />
             </div>
           </div>
 
-          <Link href="/dashboard" className="w-full py-4 bg-gradient-to-r from-[#FF007A] to-[#7928CA] hover:opacity-95 text-white font-black text-base rounded-2xl transition-all shadow-[0_0_30px_rgba(255,0,122,0.5)] flex items-center justify-center">
+          <Link href="/dashboard" className="w-full py-4 bg-gradient-to-r bg-[#49263F] hover:bg-[#3E1F35] hover:opacity-95 text-white font-black text-base rounded-2xl transition-all shadow-lg flex items-center justify-center">
             Create Account
           </Link>
         </form>
@@ -102,7 +102,7 @@ export default function SignupPage() {
         <div className="text-center pt-6">
           <p className="text-sm font-bold text-slate-300">
             Already have an account?{" "}
-            <Link href="/auth/login" className="text-pink-400 hover:text-pink-300 hover:underline">
+            <Link href="/auth/login" className="text-[#D1C7BD] hover:text-white hover:underline">
               Sign in
             </Link>
           </p>

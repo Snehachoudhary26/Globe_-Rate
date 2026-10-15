@@ -105,7 +105,7 @@ export default function BudgetRiverPage() {
           </Link>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-xs font-black hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,0,122,0.35)] flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-[#49263F] hover:bg-[#3E1F35] text-white text-xs font-black hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,0,122,0.35)] flex items-center gap-1.5"
           >
             <Plus size={15} /> Log Expense
           </button>
@@ -118,12 +118,12 @@ export default function BudgetRiverPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 border border-pink-200 text-xs font-black text-[#FF007A] mb-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFECE8] border border-[#DDD7D0] text-xs font-black text-[#49263F] mb-3">
               <span className="flex h-2 w-2 rounded-full bg-[#FF007A] animate-pulse"></span>
               ACTIVE TRIP: EURO TOUR
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight flex items-center gap-3">
-              Budget River <Droplets size={34} className="text-[#A855F7]" />
+              Budget River <Droplets size={34} className="text-[#49263F]" />
             </h1>
             <p className="text-base text-slate-600 font-medium mt-2 max-w-2xl">
               Real-time dynamic spending flow and multi-currency burn rate monitoring to prevent overspending abroad.
@@ -133,7 +133,7 @@ export default function BudgetRiverPage() {
           <div className="flex items-center gap-3">
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="w-full md:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-sm font-black hover:opacity-95 transition-all shadow-[0_0_25px_rgba(255,0,122,0.3)] flex items-center justify-center gap-2"
+              className="w-full md:w-auto px-6 py-3 rounded-2xl bg-[#49263F] hover:bg-[#3E1F35] text-white text-sm font-black hover:opacity-95 transition-all shadow-[0_0_25px_rgba(255,0,122,0.3)] flex items-center justify-center gap-2"
             >
               <Plus size={18} /> Log Expense
             </button>
@@ -174,7 +174,7 @@ export default function BudgetRiverPage() {
             <div className="h-7 w-full bg-slate-100 rounded-full p-1 border border-slate-200/80 flex items-center overflow-hidden">
               <div 
                 style={{ width: `${spentPercent}%` }}
-                className="h-full rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-[11px] font-black text-white flex items-center justify-center transition-all duration-700 shadow-sm"
+                className="h-full rounded-full bg-[#49263F] hover:bg-[#3E1F35] text-[11px] font-black text-white flex items-center justify-center transition-all duration-700 shadow-sm"
               >
                 {spentPercent > 12 && `${spentPercent}% Spent`}
               </div>
@@ -211,7 +211,7 @@ export default function BudgetRiverPage() {
 
           {/* Food & Dining */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-pink-50 text-[#FF007A] border border-pink-200 flex items-center justify-center mb-4 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-[#EFECE8] text-[#49263F] border border-[#DDD7D0] flex items-center justify-center mb-4 shadow-sm">
               <Utensils size={22} />
             </div>
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Food & Dining</p>
@@ -231,7 +231,7 @@ export default function BudgetRiverPage() {
 
           {/* Activities & Misc */}
           <div className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all">
-            <div className="w-12 h-12 rounded-2xl bg-purple-50 text-[#A855F7] border border-purple-200 flex items-center justify-center mb-4 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-purple-50 text-[#49263F] border border-purple-200 flex items-center justify-center mb-4 shadow-sm">
               <Ticket size={22} />
             </div>
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Activities & Misc</p>
@@ -250,7 +250,7 @@ export default function BudgetRiverPage() {
             </div>
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="text-xs font-black text-[#FF007A] hover:underline flex items-center gap-1"
+              className="text-xs font-black text-[#49263F] hover:underline flex items-center gap-1"
             >
               + Quick Add
             </button>
@@ -262,9 +262,9 @@ export default function BudgetRiverPage() {
                 <div className="flex items-center gap-4">
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
                     expense.category === "hotels" ? "bg-blue-50 text-blue-600" :
-                    expense.category === "food" ? "bg-pink-50 text-[#FF007A]" :
+                    expense.category === "food" ? "bg-[#EFECE8] text-[#49263F]" :
                     expense.category === "transport" ? "bg-emerald-50 text-emerald-600" :
-                    "bg-purple-50 text-[#A855F7]"
+                    "bg-purple-50 text-[#49263F]"
                   }`}>
                     {expense.category === "hotels" && <Hotel size={18} />}
                     {expense.category === "food" && <Utensils size={18} />}
@@ -303,7 +303,7 @@ export default function BudgetRiverPage() {
             </button>
 
             <div className="mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-[#FF007A] text-xs font-black mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFECE8] text-[#49263F] text-xs font-black mb-2">
                 <Plus size={13} /> Add to River
               </div>
               <h3 className="text-2xl font-black text-slate-900 tracking-tight">Log New Expense</h3>
@@ -366,7 +366,7 @@ export default function BudgetRiverPage() {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-sm font-black hover:opacity-95 transition-all shadow-[0_0_20px_rgba(255,0,122,0.4)]"
+                  className="w-full py-3.5 rounded-2xl bg-[#49263F] hover:bg-[#3E1F35] text-white text-sm font-black hover:opacity-95 transition-all shadow-[0_0_20px_rgba(255,0,122,0.4)]"
                 >
                   Confirm & Update River
                 </button>

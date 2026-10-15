@@ -19,14 +19,14 @@ export default function FeaturesPage() {
     {
       icon: ShieldAlert,
       tag: "Scam Protection",
-      color: "#FF007A",
+      color: "#49263F",
       title: "ATM Scam Detector",
       description: "Exposes hidden dynamic currency conversion markups (8%–14%) at foreign ATMs and airport booths.",
     },
     {
       icon: Sparkles,
       tag: "Nova AI Vision",
-      color: "#A855F7",
+      color: "#8A7B85",
       title: "Nova AI Lens",
       description: "Snap a photo of foreign cafe menus or bills. Instantly translates prices to INR at mid-market rates.",
     },
@@ -47,21 +47,21 @@ export default function FeaturesPage() {
     {
       icon: Eye,
       tag: "Price Anchor",
-      color: "#FF007A",
+      color: "#49263F",
       title: "Daily Item Anchors",
       description: "Stops foreign currency confusion by translating unfamiliar notes into everyday items (like coffee or pizza).",
     },
     {
       icon: Smartphone,
       tag: "Offline Vault",
-      color: "#A855F7",
+      color: "#8A7B85",
       title: "Zero-Data Offline Mode",
       description: "Access cached forex rates and emergency embassy numbers even with zero international roaming data.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans relative overflow-x-hidden selection:bg-[#FF007A] selection:text-white">
+    <div className="min-h-screen bg-[#FAF8F6] text-[#29252B] font-sans relative overflow-x-hidden selection:bg-[#FF007A] selection:text-white">
       
       {/* Pink & Purple Bubbles */}
       <FloatingParticles />
@@ -71,32 +71,32 @@ export default function FeaturesPage() {
       <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] bg-purple-200/40 blur-[180px] rounded-full pointer-events-none"></div>
 
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-white/80 backdrop-blur-xl border-b border-[#DDD7D0]/80 shadow-sm">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-md flex-shrink-0 border border-slate-200">
+          <div className="w-10 h-10 rounded-full overflow-hidden relative shadow-md flex-shrink-0 border border-[#DDD7D0]">
             <Image src="/images/logo-brand.png" alt="GlobeRate Logo" fill className="object-cover" priority />
           </div>
-          <span className="text-2xl font-black tracking-tight text-slate-900">
+          <span className="text-2xl font-black tracking-tight text-[#29252B]">
             GlobeRate
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-          <Link href="/features" className="text-[#FF007A] transition-colors">Features</Link>
-          <Link href="/dashboard/nova" className="hover:text-[#FF007A] transition-colors flex items-center gap-1">
-            Nova AI <Sparkles size={14} className="text-[#FF007A]" />
+        <div className="hidden md:flex items-center gap-8 text-sm font-bold text-[#5C555C]">
+          <Link href="/features" className="text-[#49263F] transition-colors">Features</Link>
+          <Link href="/dashboard/nova" className="hover:text-[#49263F] transition-colors flex items-center gap-1">
+            Nova AI <Sparkles size={14} className="text-[#49263F]" />
           </Link>
-          <Link href="/dashboard/map" className="hover:text-[#FF007A] transition-colors">Destinations</Link>
+          <Link href="/dashboard/map" className="hover:text-[#49263F] transition-colors">Destinations</Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-slate-200 transition-all border border-slate-200">
+          <button className="hidden md:flex items-center gap-1 text-sm font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-full hover:bg-slate-200 transition-all border border-[#DDD7D0]">
             EN <ChevronDown size={14} />
           </button>
-          <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-700 hover:text-slate-900 transition-colors">
+          <Link href="/auth/login" className="hidden md:block text-sm font-bold text-slate-700 hover:text-[#29252B] transition-colors">
             Sign In
           </Link>
-          <Link href="/auth/signup" className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-sm font-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,0,122,0.4)] transition-all">
+          <Link href="/auth/signup" className="px-6 py-2.5 rounded-full bg-[#49263F] hover:bg-[#3E1F35] text-white text-sm font-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,0,122,0.4)] transition-all">
             Get Started
           </Link>
         </div>
@@ -104,18 +104,18 @@ export default function FeaturesPage() {
 
       {/* HEADER */}
       <section className="pt-40 pb-16 px-6 md:px-12 max-w-7xl mx-auto text-center relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF007A]/10 border border-[#FF007A]/25 text-sm font-black text-[#FF007A] mb-6 backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF007A]/10 border border-[#DDD7D0] text-sm font-black text-[#49263F] mb-6 backdrop-blur-md">
           <Zap size={16} /> All Features & Capabilities
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1] mb-6">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[#29252B] leading-[1.1] mb-6">
           Everything built to <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF007A] via-[#A855F7] to-[#FACC15]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#49263F] to-[#94858F]">
             protect your travel money.
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
+        <p className="text-lg md:text-xl text-[#5C555C] mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
           Over 21 powerful financial tools designed to keep you safe from airport currency markups and overspending.
         </p>
       </section>
@@ -128,7 +128,7 @@ export default function FeaturesPage() {
             return (
               <div 
                 key={idx}
-                className="bg-white rounded-[2.5rem] p-8 border border-slate-200/80 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col justify-between"
+                className="bg-white rounded-[2.5rem] p-8 border border-[#DDD7D0]/80 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -146,10 +146,10 @@ export default function FeaturesPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-black text-slate-900 mb-3">
+                  <h3 className="text-2xl font-black text-[#29252B] mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-sm font-medium leading-relaxed mb-6">
+                  <p className="text-[#5C555C] text-sm font-medium leading-relaxed mb-6">
                     {item.description}
                   </p>
                 </div>
@@ -165,19 +165,19 @@ export default function FeaturesPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="w-full bg-white border-t border-slate-200 py-12 px-6 md:px-12 relative z-10 text-slate-600">
+      <footer className="w-full bg-white border-t border-[#DDD7D0] py-12 px-6 md:px-12 relative z-10 text-[#5C555C]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-sm flex-shrink-0 border border-slate-200">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative shadow-sm flex-shrink-0 border border-[#DDD7D0]">
               <Image src="/images/logo-brand.png" alt="Logo" fill className="object-cover" />
             </div>
-            <span className="text-xl font-black text-slate-900">GlobeRate</span>
+            <span className="text-xl font-black text-[#29252B]">GlobeRate</span>
           </div>
           <p className="text-sm font-medium">© 2026 GlobeRate. Built for smarter global travel finance.</p>
-          <div className="flex gap-6 text-sm font-bold text-slate-600">
-            <Link href="/" className="hover:text-slate-900 transition-colors">Privacy</Link>
-            <Link href="/" className="hover:text-slate-900 transition-colors">Terms</Link>
-            <Link href="/" className="hover:text-slate-900 transition-colors">Contact</Link>
+          <div className="flex gap-6 text-sm font-bold text-[#5C555C]">
+            <Link href="/" className="hover:text-[#29252B] transition-colors">Privacy</Link>
+            <Link href="/" className="hover:text-[#29252B] transition-colors">Terms</Link>
+            <Link href="/" className="hover:text-[#29252B] transition-colors">Contact</Link>
           </div>
         </div>
       </footer>

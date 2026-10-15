@@ -143,7 +143,7 @@ export default function NovaAILensPage() {
           </Link>
           <button 
             onClick={() => fileInputRef.current?.click()}
-            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-xs font-black hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,0,122,0.35)] flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-[#49263F] hover:bg-[#3E1F35] text-white text-xs font-black hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,0,122,0.35)] flex items-center gap-1.5"
           >
             <Upload size={14} /> Upload Any Picture
           </button>
@@ -156,7 +156,7 @@ export default function NovaAILensPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 border border-pink-200 text-xs font-black text-[#FF007A] mb-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFECE8] border border-[#DDD7D0] text-xs font-black text-[#49263F] mb-3">
               <Sparkles size={14} />
               Nova AI Vision OCR & Scam Shield
             </div>
@@ -180,7 +180,7 @@ export default function NovaAILensPage() {
             onClick={() => fileInputRef.current?.click()}
             className="px-6 py-3 rounded-2xl bg-white border border-slate-200 text-slate-800 text-sm font-black hover:bg-slate-50 transition-all shadow-sm flex items-center gap-2"
           >
-            <Camera size={18} className="text-[#FF007A]" /> Choose From Device / Camera
+            <Camera size={18} className="text-[#49263F]" /> Choose From Device / Camera
           </button>
         </div>
 
@@ -203,7 +203,7 @@ export default function NovaAILensPage() {
           ))}
 
           {customImage && (
-            <div className="px-4 py-2 rounded-full text-xs font-black bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white flex items-center gap-2 shadow-sm">
+            <div className="px-4 py-2 rounded-full text-xs font-black bg-[#49263F] hover:bg-[#3E1F35] text-white flex items-center gap-2 shadow-sm">
               <FileImage size={14} /> Your Uploaded Image
             </div>
           )}
@@ -256,7 +256,7 @@ export default function NovaAILensPage() {
                   disabled={isScanning}
                   className="px-6 py-2.5 rounded-full bg-white/95 backdrop-blur-md text-slate-900 font-black text-xs hover:bg-white transition-all shadow-lg flex items-center gap-2 hover:scale-105"
                 >
-                  <Scan size={14} className="text-[#FF007A]" />
+                  <Scan size={14} className="text-[#49263F]" />
                   {isScanning ? "Scanning Matrix..." : "Re-Analyze Screen"}
                 </button>
               </div>
@@ -299,8 +299,8 @@ export default function NovaAILensPage() {
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between p-3.5 bg-pink-50/60 rounded-2xl border border-pink-100">
-                  <span className="text-xs font-black text-[#FF007A]">Converted Home Rate:</span>
+                <div className="flex items-center justify-between p-3.5 bg-[#EFECE8] rounded-2xl border border-[#DDD7D0]">
+                  <span className="text-xs font-black text-[#49263F]">Converted Home Rate:</span>
                   <span className="text-sm font-black text-slate-900">
                     {customImage ? "Calculated at Mid-Market Rate" : selectedPreset.convertedPrice}
                   </span>
@@ -324,7 +324,7 @@ export default function NovaAILensPage() {
             <div className="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
               <button 
                 onClick={() => fileInputRef.current?.click()}
-                className="text-xs font-black text-[#FF007A] hover:underline flex items-center gap-1.5"
+                className="text-xs font-black text-[#49263F] hover:underline flex items-center gap-1.5"
               >
                 <Upload size={14} /> Scan another picture
               </button>

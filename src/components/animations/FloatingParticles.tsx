@@ -18,147 +18,20 @@ export default function FloatingParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    // Exactly 11 well-spaced bubbles: Framing corners, edges, and 2-3 in the open middle
+    // 11 continuous floating & swaying bubbles in Aubergine & Mauve Grey (Zero pink, zero purple!)
     const balancedLayout: Particle[] = [
-      // --- 4 CORNERS ---
-      {
-        id: 1,
-        x: 4,  // Top-Left Corner
-        y: 8,
-        size: 24,
-        duration: 11,
-        delay: -2,
-        bg: "rgba(255, 0, 122, 0.28)",
-        border: "rgba(255, 0, 122, 0.60)",
-        glow: "rgba(255, 0, 122, 0.20)",
-        animationType: "bubbleFloatUp",
-      },
-      {
-        id: 2,
-        x: 93, // Top-Right Corner
-        y: 10,
-        size: 24,
-        duration: 12,
-        delay: -4,
-        bg: "rgba(168, 85, 247, 0.28)",
-        border: "rgba(168, 85, 247, 0.60)",
-        glow: "rgba(168, 85, 247, 0.20)",
-        animationType: "bubbleFloatSway",
-      },
-      {
-        id: 3,
-        x: 5,  // Bottom-Left Corner
-        y: 88,
-        size: 22,
-        duration: 13,
-        delay: -6,
-        bg: "rgba(168, 85, 247, 0.28)",
-        border: "rgba(168, 85, 247, 0.60)",
-        glow: "rgba(168, 85, 247, 0.20)",
-        animationType: "bubbleFloatSway",
-      },
-      {
-        id: 4,
-        x: 94, // Bottom-Right Corner
-        y: 86,
-        size: 24,
-        duration: 10,
-        delay: -8,
-        bg: "rgba(255, 0, 122, 0.28)",
-        border: "rgba(255, 0, 122, 0.60)",
-        glow: "rgba(255, 0, 122, 0.20)",
-        animationType: "bubbleFloatUp",
-      },
-
-      // --- SIDE & TOP EDGES ---
-      {
-        id: 5,
-        x: 6,  // Left Edge (Upper)
-        y: 38,
-        size: 22,
-        duration: 10,
-        delay: -3,
-        bg: "rgba(6, 182, 212, 0.25)",
-        border: "rgba(6, 182, 212, 0.55)",
-        glow: "rgba(6, 182, 212, 0.15)",
-        animationType: "bubbleFloatUp",
-      },
-      {
-        id: 6,
-        x: 7,  // Left Edge (Lower)
-        y: 62,
-        size: 20,
-        duration: 12,
-        delay: -7,
-        bg: "rgba(250, 204, 21, 0.25)",
-        border: "rgba(250, 204, 21, 0.55)",
-        glow: "rgba(250, 204, 21, 0.15)",
-        animationType: "bubbleFloatSway",
-      },
-      {
-        id: 7,
-        x: 91, // Right Edge (Upper)
-        y: 36,
-        size: 22,
-        duration: 11,
-        delay: -5,
-        bg: "rgba(250, 204, 21, 0.25)",
-        border: "rgba(250, 204, 21, 0.55)",
-        glow: "rgba(250, 204, 21, 0.15)",
-        animationType: "bubbleFloatSway",
-      },
-      {
-        id: 8,
-        x: 90, // Right Edge (Lower)
-        y: 62,
-        size: 20,
-        duration: 13,
-        delay: -1,
-        bg: "rgba(6, 182, 212, 0.25)",
-        border: "rgba(6, 182, 212, 0.55)",
-        glow: "rgba(6, 182, 212, 0.15)",
-        animationType: "bubbleFloatUp",
-      },
-      {
-        id: 9,
-        x: 50, // Top Center Edge
-        y: 5,
-        size: 22,
-        duration: 12,
-        delay: -9,
-        bg: "rgba(168, 85, 247, 0.26)",
-        border: "rgba(168, 85, 247, 0.55)",
-        glow: "rgba(168, 85, 247, 0.18)",
-        animationType: "bubbleFloatUp",
-      },
-
-      // --- 2 BUBBLES IN OPEN MIDDLE WHITESPACE ---
-      {
-        id: 10,
-        x: 34, // Gentle Upper-Center
-        y: 28,
-        size: 22,
-        duration: 11,
-        delay: -4,
-        bg: "rgba(255, 0, 122, 0.26)",
-        border: "rgba(255, 0, 122, 0.55)",
-        glow: "rgba(255, 0, 122, 0.18)",
-        animationType: "bubbleFloatUp",
-      },
-      {
-        id: 11,
-        x: 68, // Gentle Lower-Center
-        y: 72,
-        size: 22,
-        duration: 13,
-        delay: -6,
-        bg: "rgba(168, 85, 247, 0.26)",
-        border: "rgba(168, 85, 247, 0.55)",
-        glow: "rgba(168, 85, 247, 0.18)",
-        animationType: "bubbleFloatSway",
-      },
+      { id: 1,  x: 4,  y: 8,  size: 24, duration: 11, delay: -2, bg: "rgba(73, 38, 63, 0.40)",   border: "rgba(73, 38, 63, 0.65)",   glow: "rgba(73, 38, 63, 0.25)",   animationType: "bubbleFloatUp" },
+      { id: 2,  x: 93, y: 10, size: 24, duration: 12, delay: -4, bg: "rgba(184, 173, 181, 0.45)", border: "rgba(184, 173, 181, 0.70)", glow: "rgba(184, 173, 181, 0.25)", animationType: "bubbleFloatSway" },
+      { id: 3,  x: 5,  y: 88, size: 22, duration: 13, delay: -6, bg: "rgba(184, 173, 181, 0.45)", border: "rgba(184, 173, 181, 0.70)", glow: "rgba(184, 173, 181, 0.25)", animationType: "bubbleFloatSway" },
+      { id: 4,  x: 94, y: 86, size: 24, duration: 10, delay: -8, bg: "rgba(73, 38, 63, 0.40)",   border: "rgba(73, 38, 63, 0.65)",   glow: "rgba(73, 38, 63, 0.25)",   animationType: "bubbleFloatUp" },
+      { id: 5,  x: 6,  y: 38, size: 22, duration: 10, delay: -3, bg: "rgba(138, 123, 133, 0.40)", border: "rgba(138, 123, 133, 0.65)", glow: "rgba(138, 123, 133, 0.20)", animationType: "bubbleFloatUp" },
+      { id: 6,  x: 7,  y: 62, size: 20, duration: 12, delay: -7, bg: "rgba(209, 199, 189, 0.45)", border: "rgba(209, 199, 189, 0.70)", glow: "rgba(209, 199, 189, 0.20)", animationType: "bubbleFloatSway" },
+      { id: 7,  x: 91, y: 36, size: 22, duration: 11, delay: -5, bg: "rgba(209, 199, 189, 0.45)", border: "rgba(209, 199, 189, 0.70)", glow: "rgba(209, 199, 189, 0.20)", animationType: "bubbleFloatSway" },
+      { id: 8,  x: 90, y: 62, size: 20, duration: 13, delay: -1, bg: "rgba(138, 123, 133, 0.40)", border: "rgba(138, 123, 133, 0.65)", glow: "rgba(138, 123, 133, 0.20)", animationType: "bubbleFloatUp" },
+      { id: 9,  x: 50, y: 5,  size: 22, duration: 12, delay: -9, bg: "rgba(73, 38, 63, 0.35)",   border: "rgba(73, 38, 63, 0.60)",   glow: "rgba(73, 38, 63, 0.20)",   animationType: "bubbleFloatUp" },
+      { id: 10, x: 34, y: 28, size: 22, duration: 11, delay: -4, bg: "rgba(73, 38, 63, 0.40)",   border: "rgba(73, 38, 63, 0.65)",   glow: "rgba(73, 38, 63, 0.25)",   animationType: "bubbleFloatUp" },
+      { id: 11, x: 68, y: 72, size: 22, duration: 13, delay: -6, bg: "rgba(184, 173, 181, 0.45)", border: "rgba(184, 173, 181, 0.70)", glow: "rgba(184, 173, 181, 0.25)", animationType: "bubbleFloatSway" },
     ];
-
     setParticles(balancedLayout);
   }, []);
 

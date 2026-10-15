@@ -64,7 +64,7 @@ export default function LoginPage() {
                 type="email" 
                 placeholder="name@example.com" 
                 defaultValue="snehachoudhary2620@gmail.com"
-                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF007A] transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#49263F] transition-all"
               />
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function LoginPage() {
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="block text-xs font-black text-slate-300 uppercase tracking-wider">Password</label>
-              <a href="#" className="text-xs font-bold text-pink-400 hover:text-pink-300">Forgot password?</a>
+              <a href="#" className="text-xs font-bold text-[#D1C7BD] hover:text-white">Forgot password?</a>
             </div>
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
@@ -80,12 +80,12 @@ export default function LoginPage() {
                 type="password" 
                 placeholder="••••••••••••" 
                 defaultValue="••••••••••••"
-                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF007A] transition-all"
+                className="w-full pl-12 pr-4 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-sm font-bold text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#49263F] transition-all"
               />
             </div>
           </div>
 
-          <Link href="/dashboard" className="w-full py-4 bg-gradient-to-r from-[#FF007A] to-[#7928CA] hover:opacity-95 text-white font-black text-base rounded-2xl transition-all shadow-[0_0_30px_rgba(255,0,122,0.5)] flex items-center justify-center">
+          <Link href="/dashboard" className="w-full py-4 bg-gradient-to-r bg-[#49263F] hover:bg-[#3E1F35] hover:opacity-95 text-white font-black text-base rounded-2xl transition-all shadow-lg flex items-center justify-center">
             Sign In to Dashboard
           </Link>
         </form>
@@ -93,7 +93,7 @@ export default function LoginPage() {
         <div className="text-center pt-6">
           <p className="text-sm font-bold text-slate-300">
             Don't have an account?{" "}
-            <Link href="/auth/signup" className="text-pink-400 hover:text-pink-300 hover:underline">
+            <Link href="/auth/signup" className="text-[#D1C7BD] hover:text-white hover:underline">
               Create free account
             </Link>
           </p>

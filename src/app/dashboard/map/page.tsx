@@ -315,7 +315,7 @@ export default function GlobalATMRadarPage() {
           <Link href="/dashboard" className="inline-flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-900 transition-colors">
             <ArrowLeft size={16} /> Dashboard
           </Link>
-          <Link href="/auth/signup" className="px-5 py-2 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] text-white text-xs font-black hover:scale-105 transition-all shadow-md">
+          <Link href="/auth/signup" className="px-5 py-2 rounded-full bg-[#49263F] hover:bg-[#3E1F35] text-white text-xs font-black hover:scale-105 transition-all shadow-md">
             Get Protected
           </Link>
         </div>
@@ -327,8 +327,8 @@ export default function GlobalATMRadarPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 border border-pink-200 text-xs font-black text-[#FF007A] mb-3">
-              <Compass size={14} className="animate-spin text-[#FF007A]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFECE8] border border-[#DDD7D0] text-xs font-black text-[#49263F] mb-3">
+              <Compass size={14} className="animate-spin text-[#49263F]" />
               Worldwide ATM Radar & Scam Shield
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
@@ -404,10 +404,10 @@ export default function GlobalATMRadarPage() {
 
             {/* Simulated Animated Radar Rings */}
             <div className="relative my-8 flex items-center justify-center">
-              <div className="w-48 h-48 rounded-full border border-pink-500/20 flex items-center justify-center animate-ping pointer-events-none"></div>
+              <div className="w-48 h-48 rounded-full border border-[#49263F]/20 flex items-center justify-center animate-ping pointer-events-none"></div>
               <div className="w-36 h-36 rounded-full border border-purple-500/40 flex items-center justify-center absolute">
-                <div className="w-24 h-24 rounded-full border border-pink-500/60 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#FF007A] to-[#A855F7] flex items-center justify-center shadow-[0_0_20px_rgba(255,0,122,0.8)]">
+                <div className="w-24 h-24 rounded-full border border-[#49263F]/60 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#49263F] hover:bg-[#3E1F35] flex items-center justify-center shadow-[0_0_20px_rgba(255,0,122,0.8)]">
                     <Compass size={22} className="text-white animate-spin" />
                   </div>
                 </div>
@@ -416,7 +416,7 @@ export default function GlobalATMRadarPage() {
 
             <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-slate-400">
               <span>{filteredATMs.length} Dispensers Verified</span>
-              <span className="text-pink-400 font-black">Zero Surcharge Priority</span>
+              <span className="text-[#B8ADB5] font-black">Zero Surcharge Priority</span>
             </div>
           </div>
 
@@ -441,7 +441,7 @@ export default function GlobalATMRadarPage() {
 
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h4 className="text-lg font-black text-slate-900 group-hover:text-[#FF007A] transition-colors">
+                        <h4 className="text-lg font-black text-slate-900 group-hover:text-[#49263F] transition-colors">
                           {atm.name}
                         </h4>
                         <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-black tracking-wide ${
