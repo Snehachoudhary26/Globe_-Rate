@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className + " bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300"}>
+      <body className={inter.className + " bg-[#FAF8F6] text-[#29252B] selection:bg-[#49263F] selection:text-white transition-colors duration-300"}>
         <ThemeProvider>
           <SplashScreen />
           <CustomCursor />
