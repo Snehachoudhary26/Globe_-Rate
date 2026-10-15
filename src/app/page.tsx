@@ -148,7 +148,7 @@ export default function Home() {
 
           <div className="bg-white rounded-3xl p-6 border border-[#DDD7D0]/80 shadow-xl">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FF007A] to-rose-600 flex items-center justify-center text-white shadow-md">
+              <div className="w-14 h-14 rounded-2xl bg-[#49263F] flex items-center justify-center text-white shadow-md">
                 <ShieldAlert size={28} />
               </div>
               <div>
@@ -225,7 +225,7 @@ export default function Home() {
           
           <div className="bg-white rounded-3xl p-6 shadow-xl border border-[#DDD7D0]/80">
             <div className="flex items-center gap-4 mb-2">
-              <LineChart size={24} className="text-cyan-500" />
+              <LineChart size={24} className="text-[#49263F]" />
               <span className="font-bold text-[#5C555C]">Total Budget Remaining</span>
             </div>
             <div className="text-4xl font-black text-[#29252B]">₹1,45,000</div>
@@ -306,7 +306,7 @@ export default function Home() {
                 When the foreign machine asks &quot;Charge in Home Currency or Local Cash?&quot;, always pick Local Cash to avoid the 12% DCC bank trap!
               </p>
             </div>
-            <Link href="/dashboard/budget" className="inline-flex items-center gap-2 text-sm font-black text-cyan-600 hover:underline">
+            <Link href="/dashboard/budget" className="inline-flex items-center gap-2 text-sm font-black text-[#49263F] hover:underline">
               Monitor Budget River <ArrowRight size={16} />
             </Link>
           </div>
@@ -323,7 +323,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Link href="/dashboard/map" className="bg-white rounded-[2.5rem] p-8 border border-[#DDD7D0]/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all group block">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FF007A] to-rose-600 flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+            <div className="w-16 h-16 rounded-2xl bg-[#49263F] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
               <ShieldAlert size={28} />
             </div>
             <h3 className="text-2xl font-black text-[#29252B] mb-2 group-hover:text-[#49263F] transition-colors">Scam Detector</h3>
@@ -348,9 +348,9 @@ export default function Home() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#B8ADB5] to-[#8A7B85] flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
               <Droplets size={28} />
             </div>
-            <h3 className="text-2xl font-black text-[#29252B] mb-2 group-hover:text-cyan-600 transition-colors">Budget River</h3>
+            <h3 className="text-2xl font-black text-[#29252B] mb-2 group-hover:text-[#49263F] transition-colors">Budget River</h3>
             <p className="text-[#5C555C] font-medium leading-relaxed mb-6">Visual, flowing budget tracking.</p>
-            <div className="flex items-center gap-2 text-sm font-bold text-cyan-600 group-hover:translate-x-1 transition-transform">
+            <div className="flex items-center gap-2 text-sm font-bold text-[#49263F] group-hover:translate-x-1 transition-transform">
               Explore Tool <ArrowRight size={16} />
             </div>
           </Link>
@@ -397,23 +397,23 @@ export default function Home() {
           {/* Right Cards */}
           <div className="flex-1 flex flex-col gap-6">
             
-            <div className="flex-1 bg-[#FFF9EE] text-[#29252B] p-8 md:p-10 rounded-[2.5rem] border border-amber-100 shadow-xl flex flex-col justify-between relative overflow-hidden">
+            <div className="flex-1 bg-white text-[#29252B] p-8 md:p-10 rounded-[2.5rem] border border-[#DDD7D0] shadow-xl flex flex-col justify-between relative overflow-hidden">
               <p className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed mb-6">
                 &quot;The Budget River feature is insane. It&apos;s the first time I actually understand how much I&apos;m spending across 3 different European currencies.&quot;
               </p>
               <div>
                 <div className="font-black text-[#29252B] text-lg">Rahul Verma</div>
-                <div className="text-sm font-bold text-amber-700">Digital Nomad</div>
+                <div className="text-sm font-bold text-[#49263F]">Digital Nomad</div>
               </div>
             </div>
 
-            <div className="flex-1 bg-[#F3E8FF] text-[#29252B] p-8 md:p-10 rounded-[2.5rem] border border-purple-100 shadow-xl flex flex-col justify-between relative overflow-hidden">
+            <div className="flex-1 bg-white text-[#29252B] p-8 md:p-10 rounded-[2.5rem] border border-[#DDD7D0] shadow-xl flex flex-col justify-between relative overflow-hidden">
               <p className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed mb-6">
                 &quot;I love the Price Anchor! Seeing that a ¥1,200 meal in Tokyo is just &apos;1 Domino&apos;s Pizza&apos; immediately stopped me from overspending.&quot;
               </p>
               <div>
                 <div className="font-black text-[#29252B] text-lg">Priya Patel</div>
-                <div className="text-sm font-bold text-purple-700">Exchange Student</div>
+                <div className="text-sm font-bold text-[#49263F]">Exchange Student</div>
               </div>
             </div>
 

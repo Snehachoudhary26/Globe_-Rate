@@ -8,7 +8,7 @@ export default function LoginPage() {
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden font-sans">
       
       {/* Background Container: Ambient Glow + Full Uncropped Artwork */}
-      <div className="absolute inset-0 z-0 bg-[#FDF2F8] overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-[#FAF8F6] overflow-hidden">
         {/* Layer 1: Ambient Blurred Backdrop to smoothly fill fullscreen height */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image 
