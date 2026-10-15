@@ -50,25 +50,25 @@ const PRESET_SAMPLES: PresetSample[] = [
     id: "euronet-atm",
     title: "Airport ATM DCC Prompt",
     flag: "🏧",
-    imageSrc: "/images/atm.jpg",
-    detectedText: "ATM Screen: 'Would you like to be charged $285.50 USD for your 200 EUR withdrawal?'",
+    imageSrc: "/images/nova_atm_screen.jpg",
+    detectedText: "ATM Screen: 'Choice of Currency: $285.50 USD with 13.5% markup OR Continue in 200.00 EUR without conversion'",
     originalPrice: "200.00 EUR",
-    convertedPrice: "Real Cost: $216.00 USD (Overcharge: +$69.50)",
+    convertedPrice: "Real Cost: $216.00 USD (Avoided Fee: +$69.50)",
     scamStatus: "Warning: 13.5% DCC Surcharge",
     statusType: "warning",
-    tip: "CRITICAL: Tap 'DECLINE CONVERSION' or 'Continue in EUR' to let your home bank convert at mid-market rate."
+    tip: "CRITICAL: Tap 'CONTINUE IN EUR' (without conversion) to let your home bank convert at the mid-market rate."
   },
   {
     id: "tokyo-ramen",
     title: "Tokyo Ramen Vending Ticket",
     flag: "🍜",
-    imageSrc: "/images/hero.jpg",
-    detectedText: "Ticket Machine: Tonkotsu Ramen with Chashu & Nitamago (1,100 JPY)",
+    imageSrc: "/images/nova_ramen_ticket.jpg",
+    detectedText: "Shokken Ticket: 特製ラーメン (Special Ramen) ¥1,100, Order #034, Counter 9",
     originalPrice: "¥1,100 JPY",
     convertedPrice: "$7.15 USD | ₹605 INR",
     scamStatus: "Standard Dining Rate",
     statusType: "safe",
-    tip: "Fair local pricing. Strictly no tipping in Japan; tip amounts are refused."
+    tip: "Authentic local ramen shop pricing. Strictly no tipping in Japan; tip amounts are refused."
   }
 ];
 
