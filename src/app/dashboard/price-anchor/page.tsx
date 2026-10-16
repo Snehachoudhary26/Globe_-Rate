@@ -2,22 +2,22 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Anchor, RefreshCcw, Coffee, Pizza, Film, Car, Smartphone, Home } from "lucide-react";
+import { Anchor, RefreshCcw, Coffee, Pizza, Film, Car, Smartphone, Home, Zap } from "lucide-react";
 
-// Familiar home items with average prices in INR
 const homeAnchors = [
-  { name: "Cup of Chai", price: 20, icon: Coffee, bg: "bg-butter-yellow", color: "text-amber-600" },
-  { name: "Movie Ticket", price: 300, icon: Film, bg: "bg-pale-purple", color: "text-purple-magenta" },
-  { name: "Uber Ride", price: 400, icon: Car, bg: "bg-pale-aqua", color: "text-sea-blue" },
-  { name: "Domino's Pizza", price: 600, icon: Pizza, bg: "bg-blush-pink", color: "text-coral-pink" },
-  { name: "Netflix Month", price: 650, icon: Smartphone, bg: "bg-slate-200", color: "text-slate-800" },
-  { name: "Month of Rent", price: 20000, icon: Home, bg: "bg-soft-mint", color: "text-sea-green" },
+  { name: "Cup of Masala Chai", price: 20, icon: Coffee },
+  { name: "Movie Ticket (PVR)", price: 300, icon: Film },
+  { name: "City Uber Ride", price: 400, icon: Car },
+  { name: "Artisanal Pizza", price: 650, icon: Pizza },
+  { name: "Monthly Streaming Sub", price: 799, icon: Smartphone },
+  { name: "Studio Monthly Rent", price: 22000, icon: Home },
 ];
 
 export default function PriceAnchor() {
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState("5000");
   const [currency, setCurrency] = useState("JPY");
   const [loading, setLoading] = useState(false);
+  const [latency, setLatency] = useState<number | null>(null);
   const [result, setResult] = useState<{
     convertedAmount: number;
     anchors: { item: any; count: number }[];
@@ -28,122 +28,143 @@ export default function PriceAnchor() {
     setLoading(true);
 
     try {
-      // Free Frankfurter API
-      const res = await fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=INR`);
+      const startTime = performance.now();
+      const res = await fetch(`/api/forex/rates?base=${currency}`);
       const data = await res.json();
-      const convertedInr = data.rates.INR;
+      setLatency(Math.round(performance.now() - startTime));
 
-      // Find best matching anchors
-      let matchedAnchors = homeAnchors.map(anchor => {
+      const inrRate = data.rates?.INR || 0.58;
+      const convertedInr = parseFloat(amount) * inrRate;
+
+      let matchedAnchors = homeAnchors.map((anchor) => {
         const count = convertedInr / anchor.price;
         return { item: anchor, count };
       });
 
-      // Filter for anchors that make sense (e.g. between 0.5 and 50 items)
       matchedAnchors = matchedAnchors
-        .filter(a => a.count >= 0.5 && a.count <= 50)
-        .sort((a, b) => {
-          // Sort to find the items closest to a whole number (1x, 2x, etc.)
-          const aDecimal = Math.abs(a.count - Math.round(a.count));
-          const bDecimal = Math.abs(b.count - Math.round(b.count));
-          return aDecimal - bDecimal;
-        })
-        .slice(0, 3); // Take top 3 best fits
+        .filter((a) => a.count >= 0.4 && a.count <= 100)
+        .sort((a, b) => Math.abs(a.count - 1) - Math.abs(b.count - 1));
 
       setResult({
         convertedAmount: convertedInr,
-        anchors: matchedAnchors
+        anchors: matchedAnchors.slice(0, 4),
       });
     } catch (error) {
-      console.error("Failed to fetch rates", error);
+      console.error("Failed to calculate anchor", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-10">
-      
-      <header>
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-butter-yellow text-amber-600 text-sm font-bold mb-4">
-          <Anchor size={16} /> Price Anchor
+    <div className="max-w-4xl mx-auto font-sans">
+      <header className="mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFECE8] border border-[#DDD7D0] text-[#49263F] text-xs font-black tracking-wide uppercase mb-3">
+          <Anchor size={15} /> Psychological Price Anchor
         </div>
-        <h1 className="text-3xl font-bold text-slate-900">Feel the price.</h1>
-        <p className="text-slate-500 font-medium mt-2">Enter a foreign price to see what it equals in familiar everyday items back home.</p>
+        <h1 className="text-3xl font-black text-[#29252B] tracking-tight">What does this cost in real life?</h1>
+        <p className="text-[#8A7B85] font-semibold mt-1">
+          When spending foreign money (like 5,000 Yen or 45 Euro), your brain loses its financial anchor. This tool translates foreign prices into familiar daily purchases.
+        </p>
       </header>
 
-      {/* Input Section */}
-      <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col md:flex-row gap-4 items-end">
-        <div className="flex-1 w-full">
-          <label className="block text-sm font-bold text-slate-700 mb-2">Price you are looking at</label>
-          <input 
-            type="number" 
-            placeholder="e.g. 2500"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 font-bold text-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-          />
-        </div>
-        <div className="w-full md:w-48">
-          <label className="block text-sm font-bold text-slate-700 mb-2">Currency</label>
-          <select 
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-4 font-bold text-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+        <div className="md:col-span-1 bg-white p-7 rounded-3xl border border-[#DDD7D0] shadow-sm space-y-4">
+          <div>
+            <label className="block text-xs font-black uppercase tracking-wider text-[#8A7B85] mb-2">Foreign Amount</label>
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              className="w-full bg-[#FAF8F6] border border-[#DDD7D0] rounded-xl px-4 py-3 font-black text-[#49263F] text-lg focus:outline-none focus:border-[#49263F]"
+              placeholder="e.g. 5000"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-black uppercase tracking-wider text-[#8A7B85] mb-2">Foreign Currency</label>
+            <select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              className="w-full bg-[#FAF8F6] border border-[#DDD7D0] rounded-xl px-4 py-3 font-black text-[#49263F] focus:outline-none focus:border-[#49263F]"
+            >
+              <option value="JPY">JPY - Japanese Yen</option>
+              <option value="EUR">EUR - Euro</option>
+              <option value="USD">USD - US Dollar</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="AED">AED - UAE Dirham</option>
+              <option value="THB">THB - Thai Baht</option>
+            </select>
+          </div>
+
+          <button
+            onClick={calculateAnchor}
+            disabled={loading || !amount}
+            className="w-full py-3.5 bg-[#49263F] text-white rounded-xl font-black hover:bg-[#3B1E33] disabled:opacity-40 transition-all flex items-center justify-center gap-2 shadow-md shadow-[#49263F]/20 cursor-pointer"
           >
-            <option value="JPY">JPY - Yen</option>
-            <option value="THB">THB - Baht</option>
-            <option value="EUR">EUR - Euro</option>
-            <option value="GBP">GBP - Pound</option>
-            <option value="USD">USD - Dollar</option>
-          </select>
+            {loading ? <RefreshCcw className="animate-spin" size={17} /> : <Anchor size={17} />}
+            {loading ? "Anchoring..." : "Anchor Price"}
+          </button>
+
+          {latency !== null && (
+            <div className="flex items-center justify-between text-[11px] font-bold text-[#8A7B85] pt-2 border-t border-[#DDD7D0]/60">
+              <span className="flex items-center gap-1 text-[#49263F]">
+                <Zap size={13} /> Edge Cached
+              </span>
+              <span>{latency}ms</span>
+            </div>
+          )}
         </div>
-        <button 
-          onClick={calculateAnchor}
-          disabled={loading || !amount}
-          className="w-full md:w-auto px-8 py-4 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center gap-2 hover:bg-amber-600 disabled:opacity-50 transition-all"
-        >
-          {loading ? <RefreshCcw className="animate-spin" size={20} /> : <Anchor size={20} />}
-          Anchor It
-        </button>
+
+        <div className="md:col-span-2">
+          {result ? (
+            <div className="space-y-4">
+              <div className="bg-[#FAF8F6] p-6 rounded-3xl border border-[#DDD7D0]">
+                <p className="text-xs font-black uppercase tracking-wider text-[#8A7B85]">Equates To Home Value</p>
+                <div className="text-3xl font-black text-[#49263F] mt-1">
+                  ₹{Math.round(result.convertedAmount).toLocaleString("en-IN")} INR
+                </div>
+                <p className="text-xs text-[#8A7B85] font-semibold mt-1">
+                  {amount} {currency} at institutional mid-market conversion
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {result.anchors.map((anchor, idx) => {
+                  const Icon = anchor.item.icon;
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="bg-white p-5 rounded-2xl border border-[#DDD7D0] shadow-sm flex items-center gap-3.5"
+                    >
+                      <div className="w-11 h-11 rounded-xl bg-[#EFECE8] text-[#49263F] flex items-center justify-center flex-shrink-0 border border-[#DDD7D0]">
+                        <Icon size={22} />
+                      </div>
+                      <div>
+                        <div className="text-xl font-black text-[#29252B]">
+                          ~{anchor.count < 1 ? anchor.count.toFixed(1) : Math.round(anchor.count)}x
+                        </div>
+                        <div className="text-xs font-bold text-[#8A7B85] leading-tight mt-0.5">
+                          {anchor.item.name}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          ) : (
+            <div className="h-full border-2 border-dashed border-[#DDD7D0] rounded-3xl flex flex-col items-center justify-center text-center p-8 bg-[#FAF8F6]/50">
+              <Anchor className="text-[#8A7B85] mb-2" size={32} />
+              <p className="text-sm font-bold text-[#29252B]">Ready to anchor foreign currency</p>
+              <p className="text-xs text-[#8A7B85] mt-1">Enter an amount on the left to visualize its actual purchasing power back home.</p>
+            </div>
+          )}
+        </div>
       </div>
-
-      {/* Results Section */}
-      {result && (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="space-y-6"
-        >
-          <div className="text-center p-8 bg-slate-900 rounded-3xl shadow-xl text-white">
-            <p className="text-slate-400 font-medium mb-2">That equals</p>
-            <h2 className="text-5xl font-black">₹{result.convertedAmount.toFixed(0)}</h2>
-          </div>
-
-          <h3 className="text-xl font-bold text-slate-800 text-center mt-10 mb-6">Which feels like buying...</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {result.anchors.map((anchor, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: idx * 0.15 }}
-                className={`p-6 rounded-3xl border border-white shadow-sm flex flex-col items-center text-center ${anchor.item.bg}`}
-              >
-                <div className={`w-16 h-16 rounded-full bg-white/50 flex items-center justify-center mb-4 shadow-sm ${anchor.item.color}`}>
-                  <anchor.item.icon size={32} />
-                </div>
-                <div className="text-3xl font-black text-slate-800 mb-1">
-                  {anchor.count < 2 ? anchor.count.toFixed(1) : Math.round(anchor.count)}x
-                </div>
-                <div className="font-bold text-slate-700">{anchor.item.name}s</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
     </div>
   );
 }
